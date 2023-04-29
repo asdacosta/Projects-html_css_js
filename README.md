@@ -18,3 +18,7 @@ Developers, users, and recruiters.
 * `Vi` text editor
 
 ## Files
+Files in `core-html` directory.
+
+| - | - |
+|`fashion_blog.html`| A fashion clothing website built from `Codecademy`|
