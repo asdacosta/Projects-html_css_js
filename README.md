@@ -20,5 +20,6 @@ Developers, users, and recruiters.
 ## Files
 Files in `core-html` directory.
 
+| File | Description |
 | - | - |
 |`fashion_blog.html`| A fashion clothing website built from `Codecademy`|
