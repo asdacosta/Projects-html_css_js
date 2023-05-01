@@ -23,3 +23,4 @@ Files in `core-html` directory.
 | File | Description |
 | - | - |
 |`fashion_blog.html`| A raw html fashion clothing website built from `Codecademy`|
+|`wine_festival.html`| A raw html festival schedule website built from `Codecademy`|
