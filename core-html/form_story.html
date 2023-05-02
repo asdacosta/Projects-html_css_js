@@ -13,19 +13,19 @@
 
             <form action="story.html" method="GET">
                 <label for="animal-1">Animal:</label>
-                <input type="text" id="animal-1" name="animal-1" placeholder="Write here..." minlength="2" maxlength="30" required>
+                <input type="text" id="animal-1" name="animal-1" placeholder="Write here..." pattern="[a-zA-Z]{2,30}" required>
                 <br>
 
                 <label for="animal-2">Another Animal:</label>
-                <input type="text" id="animal-2" name="animal-2" minlength="2" maxlength="30" placeholder="Next animal here..." required>
+                <input type="text" id="animal-2" name="animal-2" pattern="[a-zA-Z]{2,30}" placeholder="Next animal here..." required>
                 <br>
 
                 <label for="animal-3">One More Animal:</label>
-                <input type="text" id="animal-3" name="animal-3" minlength="2" maxlength="30" placeholder="Last animal here..." required>  
+                <input type="text" id="animal-3" name="animal-3" pattern="[a-zA-Z]{2,30}" placeholder="Last animal here..." required>  
                 <br>          
 
                 <label for="adj-1">Adjective (past tense):</label>
-                <input type="text" id="adj-1" name="adj-1" minlength="2" maxlength="30" placeholder="Any adjective" required>
+                <input type="text" id="adj-1" name="adj-1" pattern="[a-zA-Z]+" placeholder="Any adjective" required>
                 <br>
 
                 <label for="verb-1">Verb (ends in -ing):</label>
@@ -53,7 +53,7 @@
                 <br>
 
                 <label for="quote">Motivational Quote:</label>
-                <input type="text" id="quote" list="quote-choices" name="quote" minlength="2" maxlength="30" placeholder="Type / select from list" required>
+                <input type="text" id="quote" list="quote-choices" name="quote" placeholder="Type / select from list" pattern="[a-zA-Z]+" required>
                 <datalist id="quote-choices">
                     <option value="winner gets ice cream!"></option>
                     <option value="die for it!"></option>
@@ -62,7 +62,7 @@
 
                 <label for="message">Meaningful Message:</label>
                 <br>
-                <textarea id="message" name="message" rows="8" cols="40" minlength="2" maxlength="30" placeholder="Enter message here..." required></textarea>
+                <textarea id="message" name="message" rows="8" cols="40" pattern="[a-zA-Z]+" placeholder="Enter message here..." required></textarea>
                 <br>
 
                 <br>
