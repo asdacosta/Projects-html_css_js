@@ -1,3 +1,7 @@
 img {
     block-size: 150px;
 }
+
+.description {
+    font-size: 20px;
+}
