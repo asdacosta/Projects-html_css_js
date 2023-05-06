@@ -25,3 +25,10 @@ Files in `core-html` directory.
 |`fashion_blog.html`| A raw html fashion clothing website built from `Codecademy`|
 |`wine_festival.html`| A raw html festival schedule website built from `Codecademy`|
 |`form_story.html`| A raw html form website built from `Codecademy`|
+
+Files in `core-css` directory.
+
+| File | Description |
+| - | - |
+|`recipe.css`| Stylesheet for `recipe.html` in `html_files`. Website built from `Codecademy`|
+|`portfolio.css`| Stylesheet for `portfolio.html` in `html_files`. Website built from `Codecademy`|
