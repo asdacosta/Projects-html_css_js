@@ -31,5 +31,5 @@ Files in `core-css` directory.
 
 | File | Description |
 | - | - |
-|`recipe.css`| Stylesheet for `recipe.html` in `html_files`. Website built from `Codecademy`|
-|`portfolio.css`| Stylesheet for `portfolio.html` in `html_files`. Website built from `Codecademy`|
+|`recipe.css`| Stylesheet for `recipe.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Syntax & Selectors`.|
+|`portfolio.css`| Stylesheet for `portfolio.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Visual Rules`.|
