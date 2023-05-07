@@ -43,7 +43,7 @@ main h1 {
 
 footer {
     background-color: #333;
-    color: #333;
+    color: #000000;
     padding: 30px 0;
 }
 
@@ -99,6 +99,9 @@ footer p {
 .supporting .col {
     font-family: 'Raleway', sans-serif;
     text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
 }
 
 .supporting img {
