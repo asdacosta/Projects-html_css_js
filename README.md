@@ -22,9 +22,9 @@ Files in `core-html` directory.
 
 | File | Description |
 | - | - |
-|`fashion_blog.html`| A raw html fashion clothing website built from `Codecademy`. Project focuses on the topic `Elements & Structure`.|
-|`wine_festival.html`| A raw html festival schedule website built from `Codecademy`. Project focuses on the topic `Tables`|
-|`form_story.html`| A raw html form website built from `Codecademy`. Project focuses on the topic `Forms`|
+|`fashion_blog.html`| A raw html fashion clothing website built from `Codecademy`. Project focuses on the topic `Elements & Structure` in HTML.|
+|`wine_festival.html`| A raw html festival schedule website built from `Codecademy`. Project focuses on the topic `Tables` in HTML.|
+|`form_story.html`| A raw html form website built from `Codecademy`. Project focuses on the topic `Forms` in HTML.|
 
 Files in `core-css` directory.
 
