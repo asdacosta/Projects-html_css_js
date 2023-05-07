@@ -31,5 +31,7 @@ Files in `core-css` directory.
 
 | File | Description |
 | - | - |
-|`recipe.css`| Stylesheet for `recipe.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Syntax & Selectors`.|
-|`portfolio.css`| Stylesheet for `portfolio.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Visual Rules`.|
+|`reset.css`| Stylesheet to remove default styling provided by web browsers. This helps to always start with a consistent baseline across different web browsers.|
+|`recipe.css`| Stylesheet for `recipe.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Syntax & Selectors` in CSS.|
+|`portfolio.css`| Stylesheet for `portfolio.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Visual Rules` in CSS.|
+|`burger.css`| Stylesheet for `burger.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `The Box Model` in CSS.|
