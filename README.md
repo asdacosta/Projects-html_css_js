@@ -35,4 +35,6 @@ Files in `core-css` directory.
 |`recipe.css`| Stylesheet for `recipe.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Syntax & Selectors` in CSS.|
 |`portfolio.css`| Stylesheet for `portfolio.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Visual Rules` in CSS.|
 |`burger.css`| Stylesheet for `burger.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `The Box Model` in CSS.|
-|`broadway.css`| Stylesheet for `broadway.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Display & Positioning` in CSS.| 
+|`broadway.css`| Stylesheet for `broadway.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Display & Positioning` in CSS.|
+|`paint.css`| Stylesheet for `paint.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Colors` in CSS.| 
+|`typo.css`| Stylesheet for `typo.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Typography` in CSS.|
