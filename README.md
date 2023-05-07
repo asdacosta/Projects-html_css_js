@@ -25,6 +25,7 @@ Files in `core-html` directory.
 |`fashion_blog.html`| A raw html fashion clothing website built from `Codecademy`. Project focuses on the topic `Elements & Structure` in HTML.|
 |`wine_festival.html`| A raw html festival schedule website built from `Codecademy`. Project focuses on the topic `Tables` in HTML.|
 |`form_story.html`| A raw html form website built from `Codecademy`. Project focuses on the topic `Forms` in HTML.|
+|`nyc_blog.html`| A raw html New York City bloq built from `Codecademy`. Project focuses on the topic `Semantic HTML` in HTML.|
 
 Files in `core-css` directory.
 
