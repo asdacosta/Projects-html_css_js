@@ -1,7 +1,7 @@
 # HTML, CSS & JS 
 
 ## Project Origin
-Codecademy
+Codecademy, InternetingIsHard
 
 ## Project Objective
 Aims to build projects using HTML, CSS, and JavaScript.
@@ -38,3 +38,4 @@ Files in `core-css` directory.
 |`broadway.css`| Stylesheet for `broadway.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Display & Positioning` in CSS.|
 |`paint.css`| Stylesheet for `paint.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Colors` in CSS.| 
 |`typo.css`| Stylesheet for `typo.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Typography` in CSS.|
+|`flexbox/styles.css`| Stylesheet for `flexbox.html`, all located in `flexbox` directory. Project is built from `InternetingIsHard` and focuses on the topic `Flexbox` in CSS.|
