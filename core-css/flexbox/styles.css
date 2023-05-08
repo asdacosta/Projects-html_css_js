@@ -96,5 +96,6 @@
 }
 
 .signup {
-    margin-left: auto;
+/* Shift flex item all the way to the right of the contianer */
+    margin-left: auto; 
 }
