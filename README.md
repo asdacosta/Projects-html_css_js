@@ -1,7 +1,7 @@
 # HTML, CSS & JS 
 
 ## Project Origin
-Codecademy, InternetingIsHard
+Codecademy, InternetingIsHard, TheOdinProject
 
 ## Project Objective
 Aims to build projects using HTML, CSS, and JavaScript.
@@ -39,3 +39,9 @@ Files in `core-css` directory.
 |`paint.css`| Stylesheet for `paint.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Colors` in CSS.| 
 |`typo.css`| Stylesheet for `typo.html` in `html_files` directory and it's built from `Codecademy`. Project focuses on the topic `Typography` in CSS.|
 |`flexbox/styles.css`| Stylesheet for `flexbox.html`, all located in `flexbox` directory. Project is built from `InternetingIsHard` and focuses on the topic `Flexbox` in CSS.|
+
+Files in `core-js` directory.
+
+| File | Description |
+| - | - |
+|`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on the `Problem Solving` in JavaScript by using algorithm and pseudocode which are commented out in the code.
