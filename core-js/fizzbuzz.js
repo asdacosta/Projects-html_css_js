@@ -10,6 +10,12 @@
 // 1. Use parseInt and prompt fxns to take number input.
 // 2. Use for loop to print numbers in console.
 // 3. All results of the if statements should be in console:
-//      i. Use if, modulus and || operator.
+//      i. Use if, modulus and && operator.
 //      ii. Use if and modulus.
 //      iii. Use if and modulus.
+
+let num = parseInt(prompt("Enter the number: "));
+
+for (let m = 1; m <= num; m++) {
+    
+}
