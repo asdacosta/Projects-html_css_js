@@ -23,6 +23,7 @@ for (let m = 1; m <= num; m++) {
         console.log('Fizz');
     } else if (m % 5 === 0) {
         console.log('Buzz');
+    } else {
+        console.log(m);
     }
-    console.log(m);
 }
