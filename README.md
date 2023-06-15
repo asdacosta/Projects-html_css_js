@@ -7,13 +7,13 @@ Codecademy, InternetingIsHard, TheOdinProject
 Aims to build projects using HTML, CSS, and JavaScript.
 
 ## Project Relevance
-To solidiy all foundations learnt in HTML, CSS, and JavaScript by building real projects.
+To solidify all foundations learnt in HTML, CSS, and JavaScript by building real projects.
 
 ## Intended Audience
 Developers, users, and recruiters.
 
 ## Technologies
-* `XUbuntu in Terminal
+* `Xbuntu` in Terminal
 * `VS Code `
 * `Vi` text editor
 
@@ -44,4 +44,4 @@ Files in `core-js` directory.
 
 | File | Description |
 | - | - |
-|`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on the `Problem Solving` in JavaScript by using algorithm and pseudocode which are commented out in the code.
+|`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on `Problem Solving` in JavaScript by using algorithm and pseudocode which are commented out in the code.
