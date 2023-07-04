@@ -5,17 +5,18 @@ A function that determines whether a given year is a leap year or not.
 Algorithm
 1. Create LEAPYEARS fxn with YEAR parameter.
     - Create if-statement to check if YEAR is divisible by 4.
-        * Nest if-statement to check if YEAR is divisible by 400.
+        * Nest if-statement to check if YEAR is divisible by 400 or not by 100.
+        * Return TRUE.
+    - Else return FALSE.
 
 
 Pseudo-code
 1. 
     FXN leapYears(year)
         IF (year is divisible by 4)
-            IF (year is divisible by 400)
+            IF (year is divisible by 400 OR year is not divisible by 100)
                 RETURN true;
-            ELSE 
-                RETURN false;
             END-IF
         END-IF
+        RETURN false;
     END-FXN
