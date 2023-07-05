@@ -4,7 +4,6 @@
     /* margin: 0;
     padding: 0; */
     font-size: 18px;
-    /* border: 2px solid gray; */
     background-color: rgb(218, 218, 218);
 }
 
@@ -18,28 +17,33 @@ body {
     margin: 0 15%;
 }
 
-nav {
-    text-align: center;
-}
-
 .bulletin {
-    list-style: none;
+    flex-direction: row;
 }
 
-ul {
+nav ul, footer ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 0;
+    list-style: none;
+    text-align: center;
 }
 
 nav li, footer li {
     padding: 10px;
+    text-align: left;
 }
 
 h2 {
     text-align: center;
     font-size: 30px;
     font-weight: 300;
+    color: #5B7FC5;
+}
+
+h3, h4, h5 {
+    font-size: 24px;
+    font-weight: 200;
     color: #5B7FC5;
 }
 
@@ -58,4 +62,17 @@ figure {
 figcaption {
     text-align: center;
     
+}
+
+footer {
+    margin-top: 50px;
+}
+
+a {
+    color: rgb(104, 154, 163);
+}
+
+a:hover {
+    color: blueviolet;
+    text-decoration: underline;
 }
