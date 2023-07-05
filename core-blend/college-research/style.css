@@ -27,6 +27,8 @@ nav ul, footer ul {
     justify-content: center;
     list-style: none;
     text-align: center;
+    border: 2px solid ;
+    border: 2px solid rgb(104, 154, 163);
 }
 
 nav li, footer li {
@@ -75,4 +77,8 @@ a {
 a:hover {
     color: blueviolet;
     text-decoration: underline;
+}
+
+a:visited {
+    color: rgb(216, 160, 56);
 }
