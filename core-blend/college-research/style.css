@@ -14,7 +14,7 @@ a {
 /* Styling */
 body {
     min-width: fit-content;
-    margin: 0 15%;
+    margin: 0 20%;
 }
 
 .bulletin {
@@ -27,7 +27,9 @@ nav ul, footer ul {
     justify-content: center;
     list-style: none;
     text-align: center;
-    border: 2px solid ;
+}
+
+nav ul:first-child {
     border: 2px solid rgb(104, 154, 163);
 }
 
@@ -79,6 +81,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:visited {
+.bulletin a:visited {
     color: rgb(216, 160, 56);
 }
