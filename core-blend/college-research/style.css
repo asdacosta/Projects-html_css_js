@@ -96,7 +96,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.bulletin a:visited {
+.bulletin a:visited, #ref a:visited {
     color: rgb(216, 160, 56);
 }
 
