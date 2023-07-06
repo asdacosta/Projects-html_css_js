@@ -45,3 +45,12 @@ Files in `core-js` directory.
 | File | Description |
 | - | - |
 |`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on `Problem Solving` in JavaScript by using algorithm and pseudocode which are commented out in the code. |
+
+Files in `core-blend` directory.
+
+| File | Description |
+| - | - |
+|`college-research/*`| Research article divided into sections. |
+
+
+The docs directory is to follow the convention from GitHub for publishing the files as a website.
