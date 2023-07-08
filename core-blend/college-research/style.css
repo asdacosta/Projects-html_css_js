@@ -22,6 +22,7 @@ html {
 body {
     flex: 0 1 60%;
     overflow: auto;
+    min-width: 360px;
 }
 
 .bulletin {
