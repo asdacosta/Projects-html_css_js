@@ -6,6 +6,8 @@
     font-family: "Roboto", Arial, sans-serif;
     font-size: 18px;
     text-align: justify;
+    letter-spacing: 0.01em;
+    word-spacing: 0.1em;
     background-color: rgb(218, 218, 218);
 }
 
@@ -35,7 +37,6 @@ body {
     body {
         flex: 0 1 80%;
         overflow: auto;
-        text-align: left;
     }
     * {
         text-align: left;
@@ -49,6 +50,7 @@ body {
     }
     * {
         text-align: left;
+        font-size: 16px;
     }
 }
 
@@ -75,19 +77,21 @@ nav li, footer li {
 
 h2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
+    letter-spacing: 0.05em;
     color: #5B7FC5;
 }
 
 h3, h4, h5 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 200;
+    letter-spacing: 0.05em;
     color: #5B7FC5;
 }
 
 header img {
-    width: 80%;
+    width: 85%;
     height: auto;
 }
 
