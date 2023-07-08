@@ -22,7 +22,27 @@ html {
 body {
     flex: 0 1 60%;
     overflow: auto;
-    min-width: 360px;
+}
+
+@media (max-width: 950px) {
+    body {
+        flex: 0 1 70%;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 770px) {
+    body {
+        flex: 0 1 80%;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        flex: 0 1 90%;
+        overflow: auto;
+    }
 }
 
 .bulletin {
