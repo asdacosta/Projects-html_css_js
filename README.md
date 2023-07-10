@@ -50,7 +50,7 @@ To test a particular condition in a test file, append all other test conditions 
 npm test file_name.spec.js
 ```
 
-Running it without any changes to the test file will test all conditions on the JavaScript file and the expected output should be `n passed, n total`.
+Running it without any changes to the test file will test all conditions on the JavaScript file and the expected output should be `n passed, n total`. <br>
 NB: npm should be installed already and after copying the files, run:
 
 ```shell
