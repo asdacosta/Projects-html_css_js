@@ -1,0 +1,19 @@
+Problem
+Create a fxn that takes two arguments, string and num, and repeats the 'string' num number of times.
+
+
+Algorithm
+1. Create REPEATSTRING fxn that takes two parameters: STRING & NUM.
+    - Use for-loop to loop NUM number of times.
+        * For every loop, repeat STRING.
+    - Return STRING.
+
+
+Pseudo-code
+1. 
+    CONST repeatString = FXN(string, num) {
+        for (m = 0; m < num; m++) {
+            Repeat string;
+        }
+        RETURN string;
+    }
