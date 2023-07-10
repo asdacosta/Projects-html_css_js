@@ -15,5 +15,5 @@ Pseudo-code
         for (m = 0; m < num; m++) {
             Repeat string;
         }
-        RETURN string;
+        RETURN repeated string;
     }
