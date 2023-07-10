@@ -57,7 +57,7 @@ NB: npm should be installed already and after copying the files, run:
 npm install
 ```
 
-This will make use of the dependencies `package.json` and `package-lock.json` to set configurations when you run the test file.
+This will make use of the dependencies `package.json` and `package-lock.json` to set configurations to aid you run the test files.
 
 | File | Description |
 | - | - |
