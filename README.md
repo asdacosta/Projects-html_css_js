@@ -68,7 +68,7 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 
 | File | Description |
 | - | - |
-|`college-research/*`| Research article divided into sections. |
+|`college-research/*`| Research article divided into sections. [Research Website](https://asdacosta.github.io/core-html_css_js/).|
 
 
 The docs directory is to follow the convention from GitHub for publishing the files as a website.
