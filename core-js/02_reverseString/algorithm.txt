@@ -1,0 +1,21 @@
+Problem
+Create a fxn that reverses a string.
+
+
+Algorithm
+1. Create REVERSESTRING fxn with parameter, STR.
+    - Use for loop to loop from end of string to start.
+        * Append to variable reverseStr.
+    - Return reverseStr.
+
+
+Pseudo-code
+1. 
+    FXN reverseString(str)
+        LET reverseStr = '';
+
+        FOR (m = length(str) - 1; m >= 0; m--)
+            reverseStr += str[m]
+        END-FOR
+        RETURN reverseStr;
+    END-FXN
