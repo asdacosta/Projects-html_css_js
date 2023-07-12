@@ -15,7 +15,7 @@ Pseudo-code
         LET reverseStr = '';
 
         FOR (m = length(str) - 1; m >= 0; m--)
-            reverseStr += str[m]
+            Append str[m] to reverseStr;
         END-FOR
         RETURN reverseStr;
     END-FXN
