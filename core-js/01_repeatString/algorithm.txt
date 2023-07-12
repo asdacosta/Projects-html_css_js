@@ -11,9 +11,9 @@ Algorithm
 
 Pseudo-code
 1. 
-    CONST repeatString = FXN(string, num) {
-        for (m = 0; m < num; m++) {
+    CONST repeatString = FXN(string, num) 
+        FOR (m = 0; m < num; m++) 
             Repeat string;
-        }
+        END-FOR
         RETURN repeated string;
-    }
+    END-FXN
