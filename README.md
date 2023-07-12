@@ -61,8 +61,11 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 
 | File | Description |
 | - | - |
+|`helloWorld.js`| Creates a function that prints 'Hello, World!' upon function call. Located in `00_helloWorld` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`repeatString.js`| Creates a function that takes two arguments, a string and number, and returns the string the number of times. Located in `01_repeatString` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`reverseString.js`| Creates a function that takes a string argument and reverses it. Located in `02_reverseString` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on `Problem Solving` in JavaScript. |
-|`leapYears.js`| Creates a function that determines whether a given year is a leap year(true) or not(false). It is associated with the test file `leapYears.spec.js`in `06_leapYears` directory and it's built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`leapYears.js`| Creates a function that determines whether a given year is a leap year(true) or not(false). Located in `06_leapYears` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 
 ### Files in `core-blend` directory.
 
