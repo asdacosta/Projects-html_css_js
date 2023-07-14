@@ -1,0 +1,25 @@
+Problem
+Create a function that takes two arguments, an array and other arguments, then removes the 'other arguments' from the array.
+
+
+Algorithm
+1. Create REMOVEFROMARRAY fxn with two parameters: ARRS and ...ARGS.
+    - Use for-of to loop ARG over ARGS.
+        * Use for-of to loop ARR over ARRS.
+            - If ARG equals ARR, then remove ARR/ARGS from ARRS.
+    - Return new ARRS.
+
+
+Pseudo-code
+1. 
+    FXN removeFromArray(arrs, ...args)
+        FOR (CONST arg OF args)
+            FOR (CONST arr OF arrs)
+                IF (arg === arr)
+                    LET index = arrs.indexOf(arg);
+                    arrs.splice(index, 1);
+                END-IF
+            END-FOR
+        END-FOR
+        RETURN arrs;
+    END-FXN
