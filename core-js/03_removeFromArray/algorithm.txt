@@ -16,8 +16,8 @@ Pseudo-code
         FOR (CONST arg OF args)
             FOR (CONST arr OF arrs)
                 IF (arg === arr)
-                    LET index = arrs.indexOf(arg);
-                    arrs.splice(index, 1);
+                    Get index of arg in arrs;
+                    Use splice method to remove that index element;
                 END-IF
             END-FOR
         END-FOR
