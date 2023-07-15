@@ -1,0 +1,26 @@
+Problem
+Create a function that takes two integers and returns the sum of all numbers between and including them.
+
+
+Algorithm
+1. Create SUMALL fxn that takes INT1 & INT2 as parameter.
+    - Declare SUM 
+    - Use if-statement to return error if any of args < 0 or not a number
+    - for (M = min of INT1 & INT2; M <= max of INT1 & INT2; M++)
+        * Let SUM += M
+    - Return SUM
+
+
+Pseudo-code
+1. 
+    FXN sumAll(int1, int2)
+        LET sum;
+        IF (int1 or int2 < 0 || int1 or int2 != number)
+            RETURN 'Error';
+        END-IF
+        FOR (m = Math.min(int1, int2); m <= Math.max(int1, int2); m++)
+            sum += m;
+        END-FOR
+        RETURN sum;
+    END-FXN
+
