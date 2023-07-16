@@ -5577,21 +5577,6 @@ students_predictions &lt;- predict(students_model, type = "response")
 students_predictions 
 
 
-
-# Interpretation for students: 
-
-# The predictions for the relevance of college curriculum to internships suggest
-that for the given levels of internships, the probability of it being classified
-as "Useless," "Moderate," or "Useful" is as follows: 
-
-# - For the first student: Probability of "Useless" = 0.56, "Moderate" = 0.32, "Useful" = 0.12 
-
-# - For the second student: Probability of "Useless" = 0.43, "Moderate" = 0.47, "Useful" = 0.10 
-
-# - For the third student: Probability of "Useless" = 0.68, "Moderate" = 0.26, "Useful" = 0.06 
-
-
-
 # Predict the relevance of college curriculum for educators 
 
 educators_model &lt;- glm(relevance ~ internships, data = educators_data, family = binomial) 
@@ -5599,20 +5584,6 @@ educators_model &lt;- glm(relevance ~ internships, data = educators_data, family
 educators_predictions &lt;- predict(educators_model, type = "response") 
 
 educators_predictions 
-
-
-
-# Interpretation for educators: 
-
-# The predictions for the relevance of college curriculum to internships suggest
-that for the given levels of internships, the probability of it being classified
-as "Useless," "Moderate," or "Useful" is as follows: 
-
-# - For the first educator: Probability of "Useless" = 0.84, "Moderate" = 0.14, "Useful" = 0.02 
-
-# - For the second educator: Probability of "Useless" = 0.50, "Moderate" = 0.45, "Useful" = 0.05 
-
-# - For the third educator: Probability of "Useless" = 0.23, "Moderate" = 0.65, "Useful" = 0.12 
 
 
 
@@ -5626,20 +5597,6 @@ employees_predictions
 
 
 
-# Interpretation for employees: 
-
-# The predictions for the relevance of college curriculum to internships suggest
-that for the given levels of internships, the probability of it being classified
-as "Useless," "Moderate," or "Useful" is as follows: 
-
-# - For the first employee: Probability of "Useless" = 0.89, "Moderate" = 0.10, "Useful" = 0.01 
-
-# - For the second employee: Probability of "Useless" = 0.94, "Moderate" = 0.06, "Useful" = 0.00 
-
-# - For the third employee: Probability of "Useless" = 0.95, "Moderate" = 0.05, "Useful" = 0.00 
-
-
-
 # Predict the relevance of college curriculum for employers 
 
 employers_model &lt;- glm(relevance ~ internships, data = employers_data, family = binomial) 
@@ -5648,19 +5605,6 @@ employers_predictions &lt;- predict(employers_model, type = "response")
 
 employers_predictions 
 
-
-
-# Interpretation for employers: 
-
-# The predictions for the relevance of college curriculum to internships suggest
- that for the given levels of internships, the probability of it being classified
-  as "Useless," "Moderate," or "Useful" is as follows: 
-
-# - For the first employer: Probability of "Useless" = 0.31, "Moderate" = 0.55, "Useful" = 0.14 
-
-# - For the second employer: Probability of "Useless" = 0.22, "Moderate" = 0.64, "Useful" = 0.14 
-
-# - For the third employer: Probability of "Useless" = 0.19, "Moderate" = 0.68, "Useful" = 0.13 
                 </code>
             </pre>
 
