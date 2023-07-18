@@ -6,7 +6,7 @@ const subtract = function(m, n) {
 	return m - n;
 };
 
-const sum = function(...args) {
+const sum = function(args) {
     let argSum = 0;
     for (let arg of args) {
         argSum += arg;
