@@ -9,7 +9,7 @@ const palindromes = function (string) {
     for (m = string.length - 1; m >= 0; m--) {
         strReverse += string[m];
     }
-    return strReverse === string;
+    return strReverse.toLowerCase() === string.toLowerCase();
 };
 
 module.exports = palindromes;
