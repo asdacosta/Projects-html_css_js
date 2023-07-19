@@ -68,6 +68,10 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`sumAll.js`| Creates a function that takes two integer arguments and returns the sum of all numbers between and including the integers. Located in `04_sumAll` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`fizzbuzz.js` | Prints numbers from 1 to user input with numbers divisible by 3, 5, and 3 & 5 replaced with Fizz, Buzz, and FizzBuzz strings correspondingly. It is associated with `fizzbuzz.html` file in `fizzbuzz` directory and it's built from `TheOdinProject`. Project focuses on `Problem Solving` in JavaScript. |
 |`leapYears.js`| Creates a function that determines whether a given year is a leap year(true) or not(false). Located in `06_leapYears` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`tempConversion.js`| Contains two functions: one converts Fahrenheit to Celsisus and vice versa. Located in `07_tempConversion` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`calculator.js`| Contains functions that adds, subtracts, finds the sum, multiplies, finds the power and factorial given parameters. Located in `08_calculator` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`palindromes.js`| Determines whether a given string is a palindrome without considering word breaks and punctuations. *(Palindrome is a string that reads the same backwards or forwards).* Located in `09_palindromes` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+
 
 ### Files in `core-blend` directory.
 
