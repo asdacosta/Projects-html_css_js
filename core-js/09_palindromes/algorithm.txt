@@ -4,11 +4,32 @@ A function that determines whether a given string is a palindrome without consid
 
 Algorithm
 1. Create PALINDROMES fxn with STRING as parameter.
-    - If reverse of STRING equals STRING, return true else false.
+    - Initialize STR;
+    - Use for-loop to loop N over STRING.
+        * If STRING[N] is '!' or ',' or '.' or ' '.
+            - continue
+        * Append STRING[N] to STR;
+        
+    - Initialize STRREVERSE.
+    - Use for-loop to loop M over STR from end
+        * Append STR[M] to STRREVERSE.
+    - Return true if STRREVERSE === STR.
 
 
 Pseudo-code
 1.
     FXN palindromes(string)
-        RETURN string.SPLIT('').REVERSE().JOIN('') === string;
+        LET STR = '';
+        FOR (n = 0; n <= string.LENGTH - 1; n++)
+            If (string[n] === '!' || ',' || '.' || ' ')
+                CONTINUE;
+            END-IF
+            str += string[n];
+        END-FOR
+
+        LET strReverse = '';
+        FOR (m = str.LENGTH - 1; m >= 0; m--)
+            strReverse += str[m];
+        END-FOR
+        RETURN strReverse === str;
     END-FXN
