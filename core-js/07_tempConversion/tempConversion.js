@@ -4,7 +4,8 @@ const convertToCelsius = function(fah) {
         // return 0 + '°F';
     }
     const cel = (fah-32) * 5/9;
-    return cel.toFixed(1);
+    celValue = cel.toFixed(1);
+    return parseFloat(celValue);
     // return fah.toFixed(1) + '°F';
 };
 
