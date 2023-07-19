@@ -11,7 +11,7 @@ const sum = function(args) {
     for (let arg of args) {
         argSum += arg;
     }
-	return parseInt(argSum);
+	return argSum;
 };
 
 const multiply = function() {
