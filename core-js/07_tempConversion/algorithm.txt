@@ -1,0 +1,24 @@
+Problem
+Write two functions: one that converts Fahrenheit to Celsius and vice versa.
+
+
+Algorithm
+1. Create CONVERTTOFAHRENHEIT fxn with parameter CEL.
+    - Define a variable FAH with its formula.
+    - Return FAH in one decimal place and append the FAH value with '°F'.
+2. Create CONVERTTOCELSIUS fxn with parameter FAH.
+    - Define a variable CEL with its formula.
+    - Return FAH in one decimal place and append the CEL value with '°C'.
+
+
+Pseudo-code
+1. 
+    FXN convertToFahrenheit(cel)
+        CONST fah = x * (9/5) + 32;
+        RETURN fah.toFixed(1) appended with '°F';
+    END-FXN
+2.
+    FXN convertToCelsius(fah)
+        CONST cel = (x-32) * 5/9;
+        RETURN cel.toFixed(1) appended with '°C';
+    END-FXN
