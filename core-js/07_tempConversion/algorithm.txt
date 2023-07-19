@@ -16,17 +16,11 @@ Algorithm
 Pseudo-code
 1. 
     FXN convertToFahrenheit(cel)
-        If (cel = 32)
-            RETURN 0;
-        END-IF
         CONST fah = cel * (9/5) + 32;
         RETURN fah.toFixed(1) appended with '°F';
     END-FXN
 2.
     FXN convertToCelsius(fah)
-        If (fah = 0)
-            RETURN 32;
-        END-IF
         CONST cel = (fah-32) * 5/9;
         RETURN cel.toFixed(1) appended with '°C';
     END-FXN
