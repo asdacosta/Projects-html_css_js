@@ -1,10 +1,10 @@
-const convertToCelsius = function(cel) {
-    if (cel === 32) {
+const convertToCelsius = function(fah) {
+    if (fah === 32) {
         return 0;
         // return 0 + '°F';
     }
-    const fah = cel * (9/5) + 32;
-    return fah.toFixed(1);
+    const cel = (fah-32) * 5/9;
+    return cel.toFixed(1);
     // return fah.toFixed(1) + '°F';
 };
 
