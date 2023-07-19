@@ -3,30 +3,24 @@ Create a calculator that adds, subtracts, finds the sum, multiplies, finds the p
 
 
 Algorithm
-1. Create ADD fxn with parameters M & N.
-    - Return sum of M and N.
-2. Create SUB fxn with parameters M & N.
-    - Return sum of M and N.
-3. Create SUM fxn with paramter ARGS.
+1. Create SUM fxn with paramter ARGS.
     - Use for-of to iterate ARG over ARGS.
         * Add each ARG to variable ARGSUM.
     - Return ARGSUM
-4. Create MULTIPLY fxn with parameter ...ARGS.
+2. Create MULTIPLY fxn with parameter ...ARGS.
     - Use for-of to iterate ARG over ARGS.
         * Multiply each ARG  to variable ARGMUL.
     Return ARGMUL.
+3. Create FACTORIAL fxn with parameter NUM.
+    - Initialize M = 0, & FACT;
+    - While M <= NUM
+        * Add M to FACT
+        * M++
+    - Return FACT
 
 
 Pseudo-code
-1.
-    FXN add(m, n)
-        RETURN m + n;
-    END-FXN
-2.
-    FXN sub(m, n)
-        RETURN m - n;
-    END-FXN
-3. 
+1. 
     FXN sum(args)
         LET argSum = 0;
         FOR (LET arg OF args)
@@ -34,7 +28,7 @@ Pseudo-code
         END-FOR
         RETURN argSum;
     END-FXN
-4.
+2.
     FXN multiply(...args)
         LET argMul = 1;
         FOR (LET arg OF args)
@@ -42,3 +36,17 @@ Pseudo-code
         END-FOR
         RETURN argMul;
     END-FXN 
+3. 
+    FXN factorial(num)
+        LET M = 1,
+            FACT = 1;
+        IF (num is 0 || num is 1)
+            RETURN 1;
+        ELSE-IF
+            WHILE (M <= FACT)
+                FACT *= M;
+                M++;
+            END-WHILE
+        END-IF
+        RETURN FACT;
+    END-FXN
