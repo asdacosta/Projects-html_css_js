@@ -1,0 +1,14 @@
+Problem
+A function that determines whether a given string is a palindrome without considering word breaks and punctuations. Palindrome is a string that reads the same backwards or forwards.
+
+
+Algorithm
+1. Create PALINDROMES fxn with STRING as parameter.
+    - If reverse of STRING equals STRING, return true else false.
+
+
+Pseudo-code
+1.
+    FXN palindromes(string)
+        RETURN string.SPLIT('').REVERSE().JOIN('') === string;
+    END-FXN
