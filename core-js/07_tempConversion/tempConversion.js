@@ -5,7 +5,10 @@ const convertToCelsius = function(fah) {
     // return fah.toFixed(1) + '°F';
 };
 
-const convertToFahrenheit = function() {
+const convertToFahrenheit = function(cel) {
+    const fah = cel * (9/5) + 32;
+    fahValue = fah.toFixed(1);
+    return parseFloat(fahValue);
 };
 
 module.exports = {
