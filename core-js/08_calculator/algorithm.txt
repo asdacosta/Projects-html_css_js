@@ -7,10 +7,14 @@ Algorithm
     - Return sum of M and N.
 2. Create SUB fxn with parameters M & N.
     - Return sum of M and N.
-3. Create SUM fxn with paramter ...ARGS.
+3. Create SUM fxn with paramter ARGS.
     - Use for-of to iterate ARG over ARGS.
         * Add each ARG to variable ARGSUM.
     - Return ARGSUM
+4. Create MULTIPLY fxn with parameter ...ARGS.
+    - Use for-of to iterate ARG over ARGS.
+        * Multiply each ARG  to variable ARGMUL.
+    Return ARGMUL.
 
 
 Pseudo-code
@@ -30,3 +34,11 @@ Pseudo-code
         END-FOR
         RETURN argSum;
     END-FXN
+4.
+    FXN multiply(...args)
+        LET argMul = 1;
+        FOR (LET arg OF args)
+            argMul *= arg;
+        END-FOR
+        RETURN argMul;
+    END-FXN 
