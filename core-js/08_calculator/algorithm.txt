@@ -1,0 +1,32 @@
+Problem
+Create a calculator that adds, subtracts, finds the sum, multiplies, finds the power and factorial.
+
+
+Algorithm
+1. Create ADD fxn with parameters M & N.
+    - Return sum of M and N.
+2. Create SUB fxn with parameters M & N.
+    - Return sum of M and N.
+3. Create SUM fxn with paramter ...ARGS.
+    - Use for-of to iterate ARG over ARGS.
+        * Add each ARG to variable ARGSUM.
+    - Return ARGSUM
+
+
+Pseudo-code
+1.
+    FXN add(m, n)
+        RETURN m + n;
+    END-FXN
+2.
+    FXN sub(m, n)
+        RETURN m - n;
+    END-FXN
+3. 
+    FXN sum(args)
+        LET argSum = 0;
+        FOR (LET arg OF args)
+            argSum += arg;
+        END-FOR
+        RETURN argSum;
+    END-FXN
