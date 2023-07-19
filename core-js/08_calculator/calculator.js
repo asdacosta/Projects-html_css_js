@@ -6,8 +6,12 @@ const subtract = function(m, n) {
 	return m - n;
 };
 
-const sum = function() {
-	
+const sum = function(...args) {
+    let argSum = 0;
+    for (let arg of args) {
+        argSum += arg;
+    }
+	return parseInt(argSum);
 };
 
 const multiply = function() {
