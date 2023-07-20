@@ -1,0 +1,19 @@
+Problem
+A function that takes an array of objects and returns an array of titles.
+
+
+Algorithm
+1. Create GETTHETITLES fxn with parameter ARRAY.
+    - Let TITLE1 be title value in 1st object.
+    - Let TITLE2 be title value in 2nd object
+    - Let TITLE be an array containing both titles and return it
+
+
+Pseudo-code
+1.
+    FXN getTheTitles(array)
+        LET values1 = Object.values(ARRAY[0]);
+        LET values2 = Object.values(ARRAY[1]);
+        LET title = [values1[0], values2[0]];
+        RETURN title;
+    END-FXN
