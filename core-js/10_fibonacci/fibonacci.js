@@ -1,4 +1,7 @@
 const fibonacci = function(nth) {
+    if (nth < 0) {
+        return 'OOPS';
+    }
     let fib = [1, 1],
         prevSum = 0;
     for (m = 0; m < nth - 2; m++) {
