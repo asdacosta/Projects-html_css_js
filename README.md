@@ -72,6 +72,7 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`calculator.js`| Contains functions that adds, subtracts, finds the sum, multiplies, finds the power and factorial given parameters. Located in `08_calculator` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`palindromes.js`| Determines whether a given string is a palindrome without considering word breaks and punctuations *(Palindrome is a string that reads the same backwards or forwards)*. Located in `09_palindromes` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`fibonacci.js`| Returns the nth number in the Fibonacci sequence *(Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers)*. Located in `10_fibonacci` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
+|`getTheTitles.js`| Returns an array of titles from an array of objects. Located in `11_getTheTitles` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 
 
 ### Files in `core-blend` directory.
