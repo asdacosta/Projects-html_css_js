@@ -5,4 +5,9 @@ const getTheTitles = function(array) {
     return title;
 };
 
+// Simpler method
+// const getTheTitles = function(array) {
+//     return array.map((book) => book.title);
+// }
+
 module.exports = getTheTitles;
