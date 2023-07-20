@@ -1,0 +1,23 @@
+Problem
+A function that returns the nth number in the Fibonacci sequence. Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers.
+
+
+Algorithm
+1. Create FIBONACCI fxn with parameter NTH.
+    - Initialize FIB as [1, 1].
+    - Use for-loop to loop M over NTH - 2.
+        * Append summation of previous two characters to FIB.
+    - Return the NTH of FIB.
+
+
+Pseudo-code
+1. 
+    FXN fibonacci(nth)
+        LET fib = [1, 1];
+        LET prevSum = 0;
+        FOR (m = 0; m < nth - 2; m++)
+            prevSum = Sum of two previous elements in array;
+            fib.push(prevSum);
+        END-FOR
+        RETURN fib[nth];
+    END-FXN
