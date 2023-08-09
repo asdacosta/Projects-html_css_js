@@ -1,7 +1,25 @@
 Problem
+A function that takes an array of objects representing people with birth and death year, and returns the oldest person.
 
 
 Algorithm
+1. Create FINDTHEOLDEST fxn with parameter ARR.
+    - Let OLDAGE = ARR.reduce of:
+        * Obtain difference between birth and death year to get age for each
+        * Use comparison operator to compare for each difference
+        * Let each current highest be for the accumulator.
+    - Use for-loop to M loop over ARR.length - 1.
+        * If OLDAGE = any of the difference of birth and death year in array[M], return that object.
 
 
 Pseudo-code
+1.
+    FXN findTheOldest(arr)
+        LET oldAge = arr.REDUCE((age, obj) => obj.yearOfDeath - obj.yearOfBirth > age, 0);
+
+        FOR (m = 0; m < arr.LENGTH - 1; m++)
+            IF (oldAge === arr[m].yearOfDeath - arr[m].yearOfBirth)
+                RETURN arr[m];
+            END-IF
+        END-FOR
+    END-FXN
