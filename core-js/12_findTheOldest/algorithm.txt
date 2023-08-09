@@ -1,5 +1,5 @@
 Problem
-A function that takes an array of objects representing people with birth and death year, and returns the oldest person.
+A function that takes an array of objects representing people with birth and death year, and returns the object with the oldest person.
 
 
 Algorithm
