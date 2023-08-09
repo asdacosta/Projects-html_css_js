@@ -1,7 +1,7 @@
 const findTheOldest = function(arr) {
     let oldAge = arr.reduce((age, obj) => {
         if (obj.yearOfDeath === undefined) {
-            obj.yearOfDeath = 2023;
+            obj.yearOfDeath = new Date().getFullYear();;
         }
         const ageDiff = obj.yearOfDeath - obj.yearOfBirth;
         return ageDiff > age ? ageDiff : age;
