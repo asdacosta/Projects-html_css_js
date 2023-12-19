@@ -1,0 +1,34 @@
+Problem
+Build merge sort function that sorts an array recursively.
+
+
+Algorithm
+1. Define fxn MERGESORT with parameter ARRAY
+    * If ARRAY.length is 1 or 0, return it.
+    * Else 
+        - Define a const MIDDLE to be position of middle number in array
+        - Define let LEFTHALF and RIGHTHALF to take respective halves of array
+        - If LEFTHALF.length is 1 && RIGHTHALF.length is 1
+            * Define NEWARRAY = Merge LEFTHALF and RIGHTHALF
+            * Sort NEWARRAY
+            * Return NEWARRAY
+        - Else-if LEFTHALF.length is 1 && RIGHTHALF.length is 2
+            * Sort RIGHTHALF
+            * Define NEWARRAY = merge LEFTHALF and RIGHTHALF
+            * Sort NEWARRAY
+            * Return NEWARRAY
+        - Else-if LEFTHALF.length is 2 && RIGHTHALF.length is 1
+            * Sort LEFTHALF
+            * Define NEWARRAY = merge LEFTHALF and RIGHTHALF
+            * Sort NEWARRAY
+            * Return NEWARRAY
+        - Else-if LEFTHALF.length is 2 && RIGHTHALF.length is 2
+            * Sort LEFTHALF and RIGHTHALF
+            * Define NEWARRAY = merge LEFTHALF and RIGHTHALF
+            * Sort NEWARRAY
+            * Return NEWARRAY
+        - Else 
+            * Make recursion call on LEFTHALF and RIGHTHALF
+            * Define LASTARRAY = Merge LEFTHALF & RIGHTHALF
+            * Sort LASTARRAY
+            * Return LASTARRAY
