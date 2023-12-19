@@ -74,6 +74,9 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`fibonacci.js`| Returns the nth number in the Fibonacci sequence *(Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers)*. Located in `10_fibonacci` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`getTheTitles.js`| Returns an array of titles from an array of objects. Located in `11_getTheTitles` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`findTheOldest.js`| Returns an object with the oldest person out of an array of objects.Located in `12_findTheOldest` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript. |
+|`mergesort.js`| Returns a sorted array using merge-sort logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
+|`fib.js`| Returns a fibonacci sequence up to the defined argument using recursion logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
+
 
 
 ### Files in `core-blend` directory.
