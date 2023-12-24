@@ -27,6 +27,20 @@ class LinkedList {
     }
   }
 
+  prepend(value) {
+    const newNode = new Node(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      // Take ref
+      const list = this.head;
+
+      this.head = newNode;
+      this.head.nextNode = list;
+    }
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -47,7 +61,9 @@ class LinkedList {
 
 const firstLink = new LinkedList();
 firstLink.append(1);
+firstLink.prepend(25);
 firstLink.append(2);
 firstLink.append("Ever");
 firstLink.append(3);
+firstLink.prepend("Vybz");
 firstLink.logList();
