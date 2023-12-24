@@ -34,24 +34,20 @@ class LinkedList {
     }
 
     let lastNode = this.head;
-    let headValue = lastNode.value;
-    let starter = `(Head) ${headValue} -> `;
-    if (this.head.nextNode === null) {
-      console.log(`${starter} -> null`);
-      return;
-    }
-
+    let starter = `(Head) ${lastNode.value} -> `;
     while (lastNode.nextNode !== null) {
       lastNode = lastNode.nextNode;
       starter += `${lastNode.value} -> `;
     }
 
     console.log(`${starter} null (Tail)`);
+    return `${starter} null (Tail)`;
   }
 }
 
 const firstLink = new LinkedList();
 firstLink.append(1);
 firstLink.append(2);
+firstLink.append("Ever");
 firstLink.append(3);
 firstLink.logList();
