@@ -30,15 +30,11 @@ class LinkedList {
   prepend(value) {
     const newNode = new Node(value);
 
-    if (this.head === null) {
-      this.head = newNode;
-    } else {
-      // Take ref
-      const list = this.head;
+    // Take ref
+    const list = this.head;
 
-      this.head = newNode;
-      this.head.nextNode = list;
-    }
+    this.head = newNode;
+    this.head.nextNode = list;
   }
 
   logList() {
