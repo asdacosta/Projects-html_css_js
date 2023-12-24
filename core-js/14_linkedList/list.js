@@ -49,7 +49,7 @@ class LinkedList {
       nodeCounts += 1;
     }
     console.log(`Number Of Nodes: ${nodeCounts}`);
-    return `Number Of Nodes: ${nodeCounts}`;
+    return nodeCounts;
   }
 
   getHeadNode() {
@@ -99,6 +99,11 @@ class LinkedList {
     return "Kindly enter a reasonable index.";
   }
 
+  pop() {
+    const lastButOneNode = this.at(this.size() - 1);
+    lastButOneNode.nextNode = null;
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -124,8 +129,9 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
-// firstLink.size();
+firstLink.size();
+firstLink.pop();
 // firstLink.getHeadNode();
 // firstLink.getTailNode();
-firstLink.at(3);
-firstLink.at(10);
+// firstLink.at(3);
+// firstLink.at(10);
