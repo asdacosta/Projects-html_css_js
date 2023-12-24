@@ -139,21 +139,21 @@ class LinkedList {
     return null;
   }
 
-  logList() {
+  toString() {
     if (this.head === null) {
       console.log("Empty");
       return "Empty";
     }
 
     let lastNode = this.head;
-    let starter = `(Head) ${lastNode.value} -> `;
+    let starter = `[Head] ( ${lastNode.value} ) -> `;
     while (lastNode.nextNode !== null) {
       lastNode = lastNode.nextNode;
-      starter += `${lastNode.value} -> `;
+      starter += `( ${lastNode.value} ) -> `;
     }
 
-    console.log(`${starter} null (Tail)`);
-    return `${starter} null (Tail)`;
+    console.log(`${starter} null [Tail]`);
+    return `${starter} null [Tail]`;
   }
 }
 
@@ -163,7 +163,7 @@ firstLink.prepend(25);
 firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
-firstLink.logList();
+firstLink.toString();
 firstLink.find(1);
 firstLink.find(2);
 // firstLink.contains("Ever");
