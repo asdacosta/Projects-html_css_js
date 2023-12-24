@@ -100,6 +100,10 @@ class LinkedList {
   }
 
   pop() {
+    if (this.head === null) {
+      return "No node to Pop :(";
+    }
+
     const lastButOneNode = this.at(this.size() - 1);
     lastButOneNode.nextNode = null;
   }
