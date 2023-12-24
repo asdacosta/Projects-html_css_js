@@ -104,6 +104,20 @@ class LinkedList {
     lastButOneNode.nextNode = null;
   }
 
+  contains(value) {
+    let lastNode = this.head;
+
+    while (lastNode.nextNode !== null) {
+      if (lastNode.value === value) {
+        console.log("True");
+        return true;
+      }
+      lastNode = lastNode.nextNode;
+    }
+    console.log("False");
+    return false;
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -129,8 +143,10 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
-firstLink.size();
-firstLink.pop();
+firstLink.contains("Ever");
+firstLink.contains(4);
+// firstLink.size();
+// firstLink.pop();
 // firstLink.getHeadNode();
 // firstLink.getTailNode();
 // firstLink.at(3);
