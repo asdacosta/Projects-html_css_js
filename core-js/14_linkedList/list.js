@@ -57,6 +57,19 @@ class LinkedList {
     return this.head;
   }
 
+  getTailNode() {
+    if (this.head === null) {
+      return "Empty";
+    }
+
+    let lastNode = this.head;
+    while (lastNode.nextNode !== null) {
+      lastNode = lastNode.nextNode;
+    }
+    console.log(lastNode);
+    return lastNode;
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -83,4 +96,5 @@ firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
 firstLink.size();
-firstLink.headValue();
+firstLink.getHeadNode();
+firstLink.getTailNode();
