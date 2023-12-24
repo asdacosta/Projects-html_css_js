@@ -118,6 +118,27 @@ class LinkedList {
     return false;
   }
 
+  find(value) {
+    let doesItContain = this.contains(value);
+
+    if (doesItContain) {
+      let nodeCounts = 1;
+      let lastNode = this.head;
+
+      while (lastNode.nextNode !== null) {
+        if (lastNode.value === value) {
+          console.log(`The index is ${nodeCounts}`);
+          return nodeCounts;
+        }
+        lastNode = lastNode.nextNode;
+        nodeCounts += 1;
+      }
+    }
+
+    console.log("Null");
+    return null;
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -143,8 +164,10 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
-firstLink.contains("Ever");
-firstLink.contains(4);
+firstLink.find(1);
+firstLink.find(2);
+// firstLink.contains("Ever");
+// firstLink.contains(4);
 // firstLink.size();
 // firstLink.pop();
 // firstLink.getHeadNode();
