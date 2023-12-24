@@ -70,6 +70,35 @@ class LinkedList {
     return lastNode;
   }
 
+  at(index) {
+    let nodeCounts = 0;
+
+    if (this.head === null) {
+      console.log("Empty");
+      return "Empty";
+    }
+
+    nodeCounts = 1;
+    let lastNode = this.head;
+    while (lastNode.nextNode !== null) {
+      if (index === nodeCounts) {
+        console.log(lastNode);
+        return lastNode;
+      }
+      lastNode = lastNode.nextNode;
+      nodeCounts += 1;
+    }
+
+    // Catch last node
+    if (index === nodeCounts) {
+      console.log(lastNode);
+      return lastNode;
+    }
+
+    console.log("Kindly enter a reasonable index.");
+    return "Kindly enter a reasonable index.";
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
@@ -95,6 +124,8 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
-firstLink.size();
-firstLink.getHeadNode();
-firstLink.getTailNode();
+// firstLink.size();
+// firstLink.getHeadNode();
+// firstLink.getTailNode();
+firstLink.at(3);
+firstLink.at(10);
