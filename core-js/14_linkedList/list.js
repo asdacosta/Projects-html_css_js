@@ -52,10 +52,15 @@ class LinkedList {
     return `Number Of Nodes: ${nodeCounts}`;
   }
 
+  getHeadNode() {
+    console.log(this.head);
+    return this.head;
+  }
+
   logList() {
     if (this.head === null) {
       console.log("Empty");
-      return;
+      return "Empty";
     }
 
     let lastNode = this.head;
@@ -78,3 +83,4 @@ firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.logList();
 firstLink.size();
+firstLink.headValue();
