@@ -258,6 +258,8 @@ class LinkedList {
   }
 }
 
+// Uncomment to test
+
 // const firstLink = new LinkedList();
 // firstLink.append(1);
 // firstLink.prepend(25);
