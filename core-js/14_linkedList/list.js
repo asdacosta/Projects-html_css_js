@@ -169,8 +169,9 @@ class LinkedList {
       return;
     }
     if (this.head !== null && (index === 1 || index === 0)) {
-      newNode.nextNode = this.head;
-      this.head = newNode;
+      // newNode.nextNode = this.head;
+      // this.head = newNode;
+      this.prepend(newNode.value);
       return;
     }
 
