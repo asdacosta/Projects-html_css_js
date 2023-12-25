@@ -78,21 +78,19 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`fib.js`| Returns a fibonacci sequence up to the defined argument using recursion logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
 |`list.js`| Executable file that logs and returns methods in a linked list class. 
 
-<details>
-<summary>Features</summary>
-
+**Features**:
 * `append(value)`: Appends a `value` to the linked list.
 * `prepend(value)`: Prepends a `value` to the linked list.
 * `size()`: Returns the total number of nodes in the linked list.
 * `getHeadNode()`: Returns the first node in the linked list.
 * `getTailNode()`: Returns the last node in the linked list.
 * `at(index)`: Returns the node at the `index`.
-* `pop()`: Removes last node
+* `pop()`: Removes last node.
 * `contains(value)`: Returns True / False if `value` is in / not in the list correspondingly.
 * `find(value)`: Returns the index of the `value` in the linked list.
 * `toString()`: Returns a string readable format of the linked list.
 * `insertAt(value, index)`: Inserts `value` at the `index`.
-* `removeAt(index)`: Removes a node at the `index`
+* `removeAt(index)`: Removes a node at the `index`.
 
 </details>
 
