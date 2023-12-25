@@ -162,16 +162,24 @@ class LinkedList {
   }
 
   insertAt(value, index) {
+    if (index < 1 || index > this.size() + 1) {
+      console.log("Define an appropriate index.");
+      return;
+    }
+
     const newNode = new Node(value);
-    // Index starts from one, but forgiving users who will indicate 0
-    if (this.head === null && (index === 1 || index === 0)) {
+    if (this.head === null && index === 1) {
       this.head = newNode;
       return;
     }
-    if (this.head !== null && (index === 1 || index === 0)) {
+    if (this.head !== null && index === 1) {
       // newNode.nextNode = this.head;
       // this.head = newNode;
       this.prepend(newNode.value);
+      return;
+    }
+    if (this.head !== null && index === this.size() + 1) {
+      this.append(newNode.value);
       return;
     }
 
@@ -213,7 +221,7 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.toString();
-firstLink.insertAt(10, 1);
+firstLink.insertAt(10, 0);
 firstLink.toString();
 // firstLink.find(1);
 // firstLink.find(2);
