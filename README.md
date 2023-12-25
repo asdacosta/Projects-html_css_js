@@ -74,8 +74,30 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`fibonacci.js`| Returns the nth number in the Fibonacci sequence *(Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers)*. Located in `10_fibonacci` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`getTheTitles.js`| Returns an array of titles from an array of objects. Located in `11_getTheTitles` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript.|
 |`findTheOldest.js`| Returns an object with the oldest person out of an array of objects.Located in `12_findTheOldest` directory and built from `TheOdinProject`. Project focuses on `Fundamentals` in JavaScript. |
-|`mergesort.js`| Returns a sorted array using merge-sort logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
+|`mergesort.js`| Executable file that returns a sorted array using merge-sort logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
 |`fib.js`| Returns a fibonacci sequence up to the defined argument using recursion logic. Located in `13_recursive` directory and build from `TheOdinProject`. Project focuses on `Recursion` in JavaScript.|
+|`list.js`| Executable file that logs and returns methods in a linked list class. 
+
+<details>
+<summary>Features</summary>
+
+* `append(value)`: Appends a `value` to the linked list.
+* `prepend(value)`: Prepends a `value` to the linked list.
+* `size()`: Returns the total number of nodes in the linked list.
+* `getHeadNode()`: Returns the first node in the linked list.
+* `getTailNode()`: Returns the last node in the linked list.
+* `at(index)`: Returns the node at the `index`.
+* `pop()`: Removes last node
+* `contains(value)`: Returns True / False if `value` is in / not in the list correspondingly.
+* `find(value)`: Returns the index of the `value` in the linked list.
+* `toString()`: Returns a string readable format of the linked list.
+* `insertAt(value, index)`: Inserts `value` at the `index`.
+* `removeAt(index)`: Removes a node at the `index`
+
+</details>
+
+Located in `14_linkedList` directory and build from `TheOdinProject`. Project focuses on `Data Structures & Algorithms` in JavaScript.|
+
 
 
 
