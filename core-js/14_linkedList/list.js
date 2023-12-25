@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-// Indexes of list starts counting from 1
+// Indexes of list starts from 1
 class LinkedList {
   constructor() {
     this.head = null;
@@ -258,16 +258,16 @@ class LinkedList {
   }
 }
 
-const firstLink = new LinkedList();
-firstLink.append(1);
-firstLink.prepend(25);
-firstLink.append("Ever");
-firstLink.append(3);
-firstLink.prepend("Vybz");
-firstLink.toString();
-firstLink.insertAt(10, 2);
-firstLink.removeAt(3);
-firstLink.toString();
+// const firstLink = new LinkedList();
+// firstLink.append(1);
+// firstLink.prepend(25);
+// firstLink.append("Ever");
+// firstLink.append(3);
+// firstLink.prepend("Vybz");
+// firstLink.toString();
+// firstLink.insertAt(10, 2);
+// firstLink.removeAt(3);
+// firstLink.toString();
 // firstLink.find(1);
 // firstLink.find(2);
 // firstLink.contains("Ever");
