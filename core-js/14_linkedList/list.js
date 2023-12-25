@@ -5,6 +5,7 @@ class Node {
   }
 }
 
+// Indexes of list starts counting from 1
 class LinkedList {
   constructor() {
     this.head = null;
@@ -159,6 +160,36 @@ class LinkedList {
     console.log(`${starter} null [Tail]`);
     return `${starter} null [Tail]`;
   }
+
+  insertAt(value, index) {
+    const newNode = new Node(value);
+    // Index starts from one, but forgiving users who will indicate 0
+    if (this.head === null && (index === 1 || index === 0)) {
+      this.head = newNode;
+      return;
+    }
+
+    let nodeCounts = 1;
+    let lastNode = this.head;
+    let listStart = this.head;
+    let captureListStart = listStart;
+    let captureListEnd = null;
+
+    while (lastNode.nextNode !== null) {
+      lastNode = lastNode.nextNode;
+      // TODO: Get index of where it ends, the loop through whole list again to set a new list up to that point
+      if (index - 1 === nodeCounts) {
+        listStart.nextNode = null;
+        // captureListStart = listStart;
+        console.log(captureListStart);
+        captureListEnd = lastNode;
+        console.log(captureListEnd);
+        return;
+      }
+      listStart = listStart.nextNode;
+      nodeCounts += 1;
+    }
+  }
 }
 
 const firstLink = new LinkedList();
@@ -168,8 +199,9 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.toString();
-firstLink.find(1);
-firstLink.find(2);
+firstLink.insertAt(10, 2);
+// firstLink.find(1);
+// firstLink.find(2);
 // firstLink.contains("Ever");
 // firstLink.contains(4);
 // firstLink.size();
