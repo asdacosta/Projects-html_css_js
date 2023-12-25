@@ -173,8 +173,6 @@ class LinkedList {
       return;
     }
     if (this.head !== null && index === 1) {
-      // newNode.nextNode = this.head;
-      // this.head = newNode;
       this.prepend(newNode.value);
       return;
     }
@@ -203,8 +201,6 @@ class LinkedList {
       if (index - 1 === nodeCounts) {
         listStart.nextNode = null;
         captureListEnd = lastNode;
-        // console.log(captureListStart);
-        // console.log(captureListEnd);
         insertNewNode();
         return;
       }
@@ -221,7 +217,7 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.toString();
-firstLink.insertAt(10, 0);
+firstLink.insertAt(10, 3);
 firstLink.toString();
 // firstLink.find(1);
 // firstLink.find(2);
