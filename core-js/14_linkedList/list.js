@@ -168,6 +168,11 @@ class LinkedList {
       this.head = newNode;
       return;
     }
+    if (this.head !== null && (index === 1 || index === 0)) {
+      newNode.nextNode = this.head;
+      this.head = newNode;
+      return;
+    }
 
     let nodeCounts = 1;
     let lastNode = this.head;
@@ -175,15 +180,23 @@ class LinkedList {
     let captureListStart = listStart;
     let captureListEnd = null;
 
+    function insertNewNode() {
+      while (captureListStart.nextNode !== null) {
+        captureListStart = captureListStart.nextNode;
+      }
+      newNode.nextNode = captureListEnd;
+      captureListStart.nextNode = newNode;
+    }
+
+    // Split list
     while (lastNode.nextNode !== null) {
       lastNode = lastNode.nextNode;
-      // TODO: Get index of where it ends, the loop through whole list again to set a new list up to that point
       if (index - 1 === nodeCounts) {
         listStart.nextNode = null;
-        // captureListStart = listStart;
-        console.log(captureListStart);
         captureListEnd = lastNode;
-        console.log(captureListEnd);
+        // console.log(captureListStart);
+        // console.log(captureListEnd);
+        insertNewNode();
         return;
       }
       listStart = listStart.nextNode;
@@ -199,7 +212,8 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.toString();
-firstLink.insertAt(10, 2);
+firstLink.insertAt(10, 1);
+firstLink.toString();
 // firstLink.find(1);
 // firstLink.find(2);
 // firstLink.contains("Ever");
