@@ -208,6 +208,54 @@ class LinkedList {
       nodeCounts += 1;
     }
   }
+
+  removeAt(index) {
+    if (index < 1 || index > this.size() + 1) {
+      console.log("Define an appropriate index.");
+      return;
+    }
+    if (this.head === null) {
+      console.log("There's no node to remove.");
+      return;
+    }
+    // Remove first node
+    if (this.head !== null && index === 1) {
+      this.head = this.head.nextNode;
+      return;
+    }
+    // Remove last node
+    if (this.head !== null && index === this.size()) {
+      this.pop();
+      return;
+    }
+
+    let nodeCounts = 1;
+    let lastNode = this.head;
+    let listStart = this.head;
+    let captureListStart = listStart;
+    let captureListEnd = null;
+
+    function removeNode() {
+      while (captureListStart.nextNode !== null) {
+        captureListStart = captureListStart.nextNode;
+      }
+      captureListEnd = captureListEnd.nextNode;
+      captureListStart.nextNode = captureListEnd;
+    }
+
+    // Split list
+    while (lastNode.nextNode !== null) {
+      lastNode = lastNode.nextNode;
+      if (index - 1 === nodeCounts) {
+        listStart.nextNode = null;
+        captureListEnd = lastNode;
+        removeNode();
+        return;
+      }
+      listStart = listStart.nextNode;
+      nodeCounts += 1;
+    }
+  }
 }
 
 const firstLink = new LinkedList();
@@ -217,7 +265,8 @@ firstLink.append("Ever");
 firstLink.append(3);
 firstLink.prepend("Vybz");
 firstLink.toString();
-firstLink.insertAt(10, 3);
+firstLink.insertAt(10, 2);
+firstLink.removeAt(3);
 firstLink.toString();
 // firstLink.find(1);
 // firstLink.find(2);
