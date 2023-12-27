@@ -195,7 +195,7 @@ class LinkedList {
       captureListStart.nextNode = newNode;
     }
 
-    // Split list
+    // Split list, insert node, and join
     while (lastNode.nextNode !== null) {
       lastNode = lastNode.nextNode;
       if (index - 1 === nodeCounts) {
@@ -218,12 +218,12 @@ class LinkedList {
       console.log("There's no node to remove.");
       return;
     }
-    // Remove first node
+    // Remove first node index
     if (this.head !== null && index === 1) {
       this.head = this.head.nextNode;
       return;
     }
-    // Remove last node
+    // Remove last node index
     if (this.head !== null && index === this.size()) {
       this.pop();
       return;
@@ -243,7 +243,7 @@ class LinkedList {
       captureListStart.nextNode = captureListEnd;
     }
 
-    // Split list
+    // Split list, remove first occurrence of node, and join.
     while (lastNode.nextNode !== null) {
       lastNode = lastNode.nextNode;
       if (index - 1 === nodeCounts) {
