@@ -11,6 +11,13 @@ class LinkedList {
     this.head = null;
   }
 
+  // Check if list is empty
+  isEmpty() {
+    const empty = this.head === null ? true : false;
+    console.log(empty);
+    return empty;
+  }
+
   append(value) {
     const newNode = new Node(value);
 
@@ -261,6 +268,7 @@ class LinkedList {
 // Uncomment to test
 
 // const firstLink = new LinkedList();
+// firstLink.isEmpty();
 // firstLink.append(1);
 // firstLink.prepend(25);
 // firstLink.append("Ever");
