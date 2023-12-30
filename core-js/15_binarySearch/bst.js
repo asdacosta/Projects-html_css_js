@@ -2,19 +2,6 @@ function node(data, left = null, right = null) {
   return { data, left, right };
 }
 
-const prettyPrint = (node, prefix = "", isLeft = true) => {
-  if (node === null) {
-    return;
-  }
-  if (node.right !== null) {
-    prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
-  }
-  console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
-  if (node.left !== null) {
-    prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
-  }
-};
-
 function buildTree(array) {
   if (array.length === 0) {
     return null;
@@ -37,8 +24,85 @@ function buildTree(array) {
 }
 
 function tree(array) {
-  rootNode = buildTree(array);
-  prettyPrint(rootNode);
+  const rootNode = buildTree(array);
+
+  const prettyPrint = (node = rootNode, prefix = "", isLeft = true) => {
+    if (node === null) {
+      return;
+    }
+    if (node.right !== null) {
+      prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
+    }
+    console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
+    if (node.left !== null) {
+      prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
+    }
+  };
+
+  function insert(value) {
+    let currentNode = rootNode;
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && value > currentNode.right.data) {
+        currentNode = currentNode.right;
+      } else if (currentNode.left !== null && value < currentNode.left.data) {
+        currentNode = currentNode.left;
+      } else {
+        console.log("Value already exists.");
+        return;
+      }
+    }
+
+    if (value > currentNode.data) {
+      currentNode.right = node(value);
+    }
+    if (value < currentNode.data) {
+      currentNode.left = node(value);
+    }
+    prettyPrint();
+  }
+
+  function remove(value) {
+    let currentNode = rootNode;
+
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && value === currentNode.right.data) {
+        // Remove node with no child
+        if (currentNode.right.right === null && currentNode.right.left === null) {
+          currentNode.right = null;
+        }
+        prettyPrint();
+        return;
+      } else if (currentNode.left !== null && value === currentNode.left.data) {
+        // Remove node with no child
+        if (currentNode.left.right === null && currentNode.left.left) {
+          currentNode.left = null;
+        }
+        prettyPrint();
+        return;
+      } else {
+        if (currentNode.right !== null && value > currentNode.right.data) {
+          currentNode = currentNode.right;
+        } else if (currentNode.left !== null && value < currentNode.left.data) {
+          currentNode = currentNode.left;
+        }
+      }
+    }
+
+    if (value === currentNode.data) {
+      currentNode.data = null;
+      prettyPrint();
+    } else {
+      console.log("Value not found.");
+    }
+  }
+
+  prettyPrint();
+
+  return { insert, prettyPrint, remove };
 }
 
-const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
+// const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
+const newArray = tree([1, 2, 3]);
+// newArray.prettyPrint();
+newArray.remove(2);
+// newArray.insert(2);
