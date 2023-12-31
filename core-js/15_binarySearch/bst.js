@@ -63,6 +63,12 @@ function tree(array) {
 
   function remove(value) {
     let currentNode = rootNode;
+    if (value === currentNode.data) {
+      removeNodeWithChildren(currentNode);
+      prettyPrint();
+      return;
+    }
+
     function removeNodeWithSingleChild(node) {
       if (node.right !== null && node.right.right === null && node.right.left === null) {
         node.data = node.right.data;
@@ -74,6 +80,31 @@ function tree(array) {
       }
     }
 
+    function removeNodeWithChildren(node) {
+      if (node.right !== null && node.left !== null) {
+        let replacementNode = node.left;
+        // Loop to find replacement node: Max value in left subtree
+        while (replacementNode.right !== null) {
+          replacementNode = replacementNode.right;
+        }
+        node.data = replacementNode.data;
+        // Loop to remove replacement node in real tree
+        let startingNode = node.left;
+        currentNode = node;
+        let isFirstNode = true;
+        while (startingNode.right !== null) {
+          currentNode = startingNode;
+          startingNode = startingNode.right;
+          isFirstNode = false;
+        }
+        if (isFirstNode) {
+          currentNode.left = null;
+        } else {
+          currentNode.right = null;
+        }
+      }
+    }
+
     while (currentNode.right !== null || currentNode.left !== null) {
       if (currentNode.right !== null && value === currentNode.right.data) {
         // Remove node with no child
@@ -81,6 +112,7 @@ function tree(array) {
           currentNode.right = null;
         }
         removeNodeWithSingleChild(currentNode.right);
+        removeNodeWithChildren(currentNode.right);
         prettyPrint();
         return;
       } else if (currentNode.left !== null && value === currentNode.left.data) {
@@ -89,6 +121,7 @@ function tree(array) {
           currentNode.left = null;
         }
         removeNodeWithSingleChild(currentNode.left);
+        removeNodeWithChildren(currentNode.left);
         prettyPrint();
         return;
       } else {
@@ -114,7 +147,7 @@ function tree(array) {
 }
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
-const newArray = tree([1, 2, 3, 4]);
+const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // newArray.prettyPrint();
-newArray.remove(3);
+newArray.remove(5);
 // newArray.insert(2);
