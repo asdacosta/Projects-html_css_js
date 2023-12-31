@@ -63,6 +63,16 @@ function tree(array) {
 
   function remove(value) {
     let currentNode = rootNode;
+    function removeNodeWithSingleChild(node) {
+      if (node.right !== null && node.right.right === null && node.right.left === null) {
+        node.data = node.right.data;
+        node.right = null;
+      }
+      if (node.left !== null && node.left.right === null && node.left.left === null) {
+        node.data = node.left.data;
+        node.left = null;
+      }
+    }
 
     while (currentNode.right !== null || currentNode.left !== null) {
       if (currentNode.right !== null && value === currentNode.right.data) {
@@ -70,6 +80,7 @@ function tree(array) {
         if (currentNode.right.right === null && currentNode.right.left === null) {
           currentNode.right = null;
         }
+        removeNodeWithSingleChild(currentNode.right);
         prettyPrint();
         return;
       } else if (currentNode.left !== null && value === currentNode.left.data) {
@@ -77,6 +88,7 @@ function tree(array) {
         if (currentNode.left.right === null && currentNode.left.left) {
           currentNode.left = null;
         }
+        removeNodeWithSingleChild(currentNode.left);
         prettyPrint();
         return;
       } else {
@@ -102,7 +114,7 @@ function tree(array) {
 }
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
-const newArray = tree([1, 2, 3]);
+const newArray = tree([1, 2, 3, 4]);
 // newArray.prettyPrint();
-newArray.remove(2);
+newArray.remove(3);
 // newArray.insert(2);
