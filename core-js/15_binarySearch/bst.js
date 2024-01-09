@@ -141,13 +141,23 @@ function tree(array) {
     }
   }
 
+  function find(value) {
+    let currentNode = rootNode;
+
+    if (value === currentNode.data) {
+      console.log(currentNode);
+      return;
+    }
+  }
+
   prettyPrint();
 
-  return { insert, prettyPrint, remove };
+  return { insert, prettyPrint, remove, find };
 }
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // newArray.prettyPrint();
-newArray.remove(5);
+// newArray.remove(5);
+newArray.find(5);
 // newArray.insert(2);
