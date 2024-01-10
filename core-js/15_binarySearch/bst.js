@@ -41,6 +41,12 @@ function tree(array) {
 
   function insert(value) {
     let currentNode = rootNode;
+    // For empty tree
+    if (!currentNode) {
+      currentNode = node(value);
+      prettyPrint(currentNode);
+      return;
+    }
     if (value === currentNode.data) {
       console.log("Value already exists!");
       return;
@@ -82,6 +88,11 @@ function tree(array) {
 
   function remove(value) {
     let currentNode = rootNode;
+    // For empty tree
+    if (!currentNode) {
+      console.log("Tree is empty!");
+      return;
+    }
     if (value === currentNode.data) {
       removeNodeWithChildren(currentNode);
       prettyPrint();
@@ -166,7 +177,11 @@ function tree(array) {
 
   function find(value) {
     let currentNode = rootNode;
-
+    // For empty tree
+    if (!currentNode) {
+      console.log("Tree is empty!");
+      return;
+    }
     if (value === currentNode.data) {
       console.log(currentNode);
       return;
@@ -203,8 +218,11 @@ function tree(array) {
 }
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
-const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+// const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+const emptyArray = tree([]);
+// emptyArray.insert(1);
+// emptyArray.find(0);
 // newArray.prettyPrint();
 // newArray.remove(9);
 // newArray.find(9);
-newArray.insert(6);
+// newArray.insert(6);
