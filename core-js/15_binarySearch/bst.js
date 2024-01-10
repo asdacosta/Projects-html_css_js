@@ -110,6 +110,8 @@ function tree(array) {
         // Remove node with no child
         if (currentNode.right.right === null && currentNode.right.left === null) {
           currentNode.right = null;
+          prettyPrint();
+          return;
         }
         removeNodeWithSingleChild(currentNode.right);
         removeNodeWithChildren(currentNode.right);
@@ -117,17 +119,19 @@ function tree(array) {
         return;
       } else if (currentNode.left !== null && value === currentNode.left.data) {
         // Remove node with no child
-        if (currentNode.left.right === null && currentNode.left.left) {
+        if (currentNode.left.right === null && currentNode.left.left === null) {
           currentNode.left = null;
+          prettyPrint();
+          return;
         }
         removeNodeWithSingleChild(currentNode.left);
         removeNodeWithChildren(currentNode.left);
         prettyPrint();
         return;
       } else {
-        if (currentNode.right !== null && value > currentNode.right.data) {
+        if (currentNode.right !== null && value > currentNode.data) {
           currentNode = currentNode.right;
-        } else if (currentNode.left !== null && value < currentNode.left.data) {
+        } else if (currentNode.left !== null && value < currentNode.data) {
           currentNode = currentNode.left;
         }
       }
@@ -182,6 +186,6 @@ function tree(array) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // newArray.prettyPrint();
-// newArray.remove(5);
-newArray.find(9);
+newArray.remove(9);
+// newArray.find(9);
 // newArray.insert(2);
