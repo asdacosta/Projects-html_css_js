@@ -148,6 +148,30 @@ function tree(array) {
       console.log(currentNode);
       return;
     }
+
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && value === currentNode.right.data) {
+        console.log(currentNode.right);
+        return;
+      } else if (currentNode.left !== null && value === currentNode.left.data) {
+        console.log(currentNode.left);
+        return;
+      } else {
+        if (currentNode.right !== null && value > currentNode.data) {
+          currentNode = currentNode.right;
+        } else if (currentNode.left !== null && value < currentNode.data) {
+          currentNode = currentNode.left;
+        }
+      }
+    }
+
+    if (value === currentNode.data) {
+      console.log(currentNode);
+      return;
+    } else {
+      console.log(currentNode);
+      console.log(`There is no node with value ${value}`);
+    }
   }
 
   prettyPrint();
@@ -159,5 +183,5 @@ function tree(array) {
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // newArray.prettyPrint();
 // newArray.remove(5);
-newArray.find(5);
+newArray.find(9);
 // newArray.insert(2);
