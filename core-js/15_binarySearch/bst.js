@@ -212,14 +212,68 @@ function tree(array) {
     }
   }
 
+  function levelOrder(callback) {
+    let currentNode = rootNode;
+    // For empty node
+    if (!currentNode) {
+      console.log("Tree is empty!");
+      return;
+    }
+
+    let resultArray = [];
+    let queue = [currentNode];
+
+    function updateArrays() {
+      resultArray.push(queue[0].data);
+      queue.shift();
+    }
+    updateArrays();
+
+    // For single node tree
+    if (currentNode.right === null && currentNode.left === null) {
+      return;
+    }
+
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && currentNode.left !== null) {
+        queue.push(currentNode.left);
+        queue.push(currentNode.right);
+        currentNode = queue[0];
+        updateArrays();
+      } else if (currentNode.right !== null && currentNode.left === null) {
+        queue.push(currentNode.right);
+        currentNode = queue[0];
+        updateArrays();
+      } else if (currentNode.left !== null && currentNode.right === null) {
+        queue.push(currentNode.left);
+        currentNode = queue[0];
+        updateArrays();
+      }
+      if (currentNode.left === null && currentNode.right === null && queue.length > 1) {
+        currentNode = queue[0];
+      }
+    }
+
+    queue.shift();
+    // Account for left over nodes
+    while (queue.length > 0 && resultArray[resultArray.length - 1] !== queue[0].data) {
+      updateArrays();
+    }
+    console.log(resultArray);
+    console.log(queue);
+  }
+
   prettyPrint();
 
-  return { insert, prettyPrint, remove, find };
+  return { insert, prettyPrint, remove, find, levelOrder };
 }
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
-// const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-const emptyArray = tree([]);
+// shortArray.levelOrder();
+const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+newArray.levelOrder();
+// const emptyArray = tree([0]);
+// emptyArray.levelOrder();
 // emptyArray.insert(1);
 // emptyArray.find(0);
 // newArray.prettyPrint();
