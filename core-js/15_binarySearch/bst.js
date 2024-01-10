@@ -41,17 +41,36 @@ function tree(array) {
 
   function insert(value) {
     let currentNode = rootNode;
+    if (value === currentNode.data) {
+      console.log("Value already exists!");
+      return;
+    }
+
     while (currentNode.right !== null || currentNode.left !== null) {
-      if (currentNode.right !== null && value > currentNode.right.data) {
-        currentNode = currentNode.right;
-      } else if (currentNode.left !== null && value < currentNode.left.data) {
-        currentNode = currentNode.left;
-      } else {
+      if (currentNode.right !== null && value === currentNode.right.data) {
         console.log("Value already exists.");
         return;
+      } else if (currentNode.left !== null && value === currentNode.left.data) {
+        console.log("Value already exists.");
+        return;
+      } else {
+        if (currentNode.right !== null && value > currentNode.data) {
+          currentNode = currentNode.right;
+        } else if (currentNode.left !== null && value < currentNode.data) {
+          currentNode = currentNode.left;
+        } else if (currentNode.left === null && value < currentNode.data) {
+          currentNode.left = node(value);
+          prettyPrint();
+          return;
+        } else if (currentNode.right === null && value > currentNode.data) {
+          currentNode.right = node(value);
+          prettyPrint();
+          return;
+        }
       }
     }
 
+    // If left and right are null
     if (value > currentNode.data) {
       currentNode.right = node(value);
     }
@@ -186,6 +205,6 @@ function tree(array) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // newArray.prettyPrint();
-newArray.remove(9);
+// newArray.remove(9);
 // newArray.find(9);
-// newArray.insert(2);
+newArray.insert(6);
