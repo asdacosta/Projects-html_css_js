@@ -212,6 +212,7 @@ function tree(array) {
     }
   }
 
+  // Breadth first level order
   function levelOrder(callback) {
     let currentNode = rootNode;
     // For empty node
@@ -269,9 +270,32 @@ function tree(array) {
     // console.log(queue);
   }
 
+  function inOrder(callback) {
+    let currentNode = rootNode;
+    const resultArray = [];
+    const stack = [];
+
+    while (currentNode !== null || stack.length > 0) {
+      while (currentNode !== null) {
+        stack.push(currentNode);
+        currentNode = currentNode.left;
+      }
+
+      currentNode = stack.pop();
+      resultArray.push(currentNode.data);
+      currentNode = currentNode.right;
+    }
+
+    if (typeof callback === "function") {
+      resultArray.forEach(callback);
+    } else {
+      console.log(resultArray);
+    }
+  }
+
   prettyPrint();
 
-  return { insert, prettyPrint, remove, find, levelOrder };
+  return { insert, prettyPrint, remove, find, levelOrder, inOrder };
 }
 
 // Optional callback functions for levelOrder()
@@ -288,7 +312,9 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.levelOrder();
+newArray.inOrder();
+// newArray.inOrder(printNodes);
+// newArray.levelOrder();
 // newArray.levelOrder(printNodes);
 // newArray.levelOrder(sumPrevNodes);
 // const emptyArray = tree([0]);
