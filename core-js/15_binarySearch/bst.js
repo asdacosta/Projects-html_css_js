@@ -225,6 +225,10 @@ function tree(array) {
 
     function updateArrays() {
       resultArray.push(queue[0].data);
+      // If a callback function arg is used
+      if (callback) {
+        callback(queue[0].data);
+      }
       queue.shift();
     }
     updateArrays();
@@ -259,8 +263,10 @@ function tree(array) {
     while (queue.length > 0 && resultArray[resultArray.length - 1] !== queue[0].data) {
       updateArrays();
     }
-    console.log(resultArray);
-    console.log(queue);
+    if (!callback) {
+      console.log(resultArray);
+    }
+    // console.log(queue);
   }
 
   prettyPrint();
@@ -268,10 +274,23 @@ function tree(array) {
   return { insert, prettyPrint, remove, find, levelOrder };
 }
 
+// Optional callback functions for levelOrder()
+function printNodes(node) {
+  console.log(node);
+}
+
+let sum = 0;
+function sumPrevNodes(node) {
+  sum += node;
+  console.log(sum);
+}
+
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 newArray.levelOrder();
+// newArray.levelOrder(printNodes);
+// newArray.levelOrder(sumPrevNodes);
 // const emptyArray = tree([0]);
 // emptyArray.levelOrder();
 // emptyArray.insert(1);
