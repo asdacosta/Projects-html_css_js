@@ -357,21 +357,20 @@ function tree(array) {
     }
   }
 
-  //TODO: Check other cases: empty and single data tree
-  function height(nodeValue) {
+  function height(value) {
     let currentNode = rootNode;
     if (currentNode === null) {
       return;
     }
 
     // Uxe root node if no value is specified
-    if (!nodeValue) {
-      nodeValue = currentNode.data;
+    if (!value) {
+      value = currentNode.data;
     }
 
     let edges = 0;
     while (currentNode !== null) {
-      if (nodeValue === currentNode.data) {
+      if (value === currentNode.data) {
         if (currentNode.right === null && currentNode.left === null) {
           console.log(`Height is 0`);
           return;
@@ -385,15 +384,61 @@ function tree(array) {
           return;
         }
       } else {
-        if (currentNode.right !== null && nodeValue > currentNode.data) {
+        if (currentNode.right !== null && value > currentNode.data) {
           currentNode = currentNode.right;
-        } else if (currentNode.left !== null && nodeValue < currentNode.data) {
+        } else if (currentNode.left !== null && value < currentNode.data) {
           currentNode = currentNode.left;
         } else {
           console.log("There exists no such node.");
           return;
         }
       }
+    }
+  }
+
+  function depth(value) {
+    let currentNode = rootNode;
+    if (currentNode === null) {
+      return;
+    }
+    // Uxe root node if no value is specified
+    if (!value) {
+      value = currentNode.data;
+    }
+
+    let edges = 0;
+    if (value === currentNode.data) {
+      console.log(`Depth of node ${value} is ${edges}`);
+      return;
+    }
+
+    // TODO: When no value is specified
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && value === currentNode.right.data) {
+        edges += 1;
+        console.log(`Depth of node ${value} is ${edges}`);
+        return;
+      } else if (currentNode.left !== null && value === currentNode.left.data) {
+        edges += 1;
+        console.log(`Depth of node ${value} is ${edges}`);
+        return;
+      } else {
+        if (currentNode.right !== null && value > currentNode.data) {
+          edges += 1;
+          currentNode = currentNode.right;
+        } else if (currentNode.left !== null && value < currentNode.data) {
+          edges += 1;
+          currentNode = currentNode.left;
+        }
+      }
+    }
+
+    if (value === currentNode.data) {
+      edges += 1;
+      console.log(`Depth of node ${value} is ${edges}`);
+      return;
+    } else {
+      console.log(`There is no node with value ${value}`);
     }
   }
 
@@ -409,6 +454,7 @@ function tree(array) {
     preOrder,
     postOrder,
     height,
+    depth,
   };
 }
 
@@ -426,7 +472,8 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.height(5);
+newArray.depth();
+// newArray.height(5);
 // newArray.postOrder();
 // newArray.preOrder();
 // newArray.inOrder();
