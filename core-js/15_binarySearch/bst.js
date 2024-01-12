@@ -399,6 +399,7 @@ function tree(array) {
   function depth(value) {
     let currentNode = rootNode;
     if (currentNode === null) {
+      console.log("Tree is empty!");
       return;
     }
     // Uxe root node if no value is specified
@@ -412,7 +413,6 @@ function tree(array) {
       return;
     }
 
-    // TODO: When no value is specified
     while (currentNode.right !== null || currentNode.left !== null) {
       if (currentNode.right !== null && value === currentNode.right.data) {
         edges += 1;
@@ -442,6 +442,80 @@ function tree(array) {
     }
   }
 
+  function isBalanced() {
+    let currentNode = rootNode;
+    // For empty node
+    if (!currentNode) {
+      console.log("Tree is empty!");
+      return;
+    }
+
+    let queue = [currentNode];
+    // For single node tree
+    if (currentNode.right === null && currentNode.left === null) {
+      console.log(true);
+      return;
+    }
+
+    function updateNodeAndQueue() {
+      currentNode = queue[0];
+      queue.shift();
+    }
+
+    while (currentNode.right !== null || currentNode.left !== null) {
+      if (currentNode.right !== null && currentNode.left !== null) {
+        queue.push(currentNode.left);
+        queue.push(currentNode.right);
+        updateNodeAndQueue();
+      } else if (currentNode.right !== null && currentNode.left === null) {
+        if (currentNode.right.right !== null) {
+          console.log(false);
+          return;
+        }
+
+        queue.push(currentNode.right);
+        updateNodeAndQueue();
+      } else if (currentNode.left !== null && currentNode.right === null) {
+        if (currentNode.left.left !== null) {
+          console.log(false);
+          return;
+        }
+
+        queue.push(currentNode.left);
+        updateNodeAndQueue();
+      }
+      if (currentNode.left === null && currentNode.right === null && queue.length > 1) {
+        currentNode = queue[0];
+      }
+    }
+
+    queue.shift();
+    // Account for left over nodes
+    while (queue.length > 0) {
+      if (
+        currentNode.right !== null &&
+        currentNode.right.right !== null &&
+        currentNode.left === null
+      ) {
+        console.log(false);
+        return;
+      }
+      if (
+        currentNode.left !== null &&
+        currentNode.left.left !== null &&
+        currentNode.right === null
+      ) {
+        console.log(false);
+        return;
+      }
+
+      updateNodeAndQueue();
+    }
+
+    // If it is balanced
+    console.log(true);
+  }
+
   prettyPrint();
 
   return {
@@ -455,6 +529,7 @@ function tree(array) {
     postOrder,
     height,
     depth,
+    isBalanced,
   };
 }
 
@@ -472,8 +547,12 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+newArray.isBalanced();
+newArray.insert(10);
+newArray.isBalanced();
+
 // newArray.depth();
-newArray.height(5);
+// newArray.height(5);
 // newArray.postOrder();
 // newArray.preOrder();
 // newArray.inOrder();
