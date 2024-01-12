@@ -293,9 +293,37 @@ function tree(array) {
     }
   }
 
+  function preOrder(callback) {
+    let currentNode = rootNode;
+    const resultArray = [];
+    const stack = [];
+
+    while (currentNode !== null || stack.length > 0) {
+      while (currentNode !== null) {
+        resultArray.push(currentNode.data);
+
+        if (currentNode.right !== null) {
+          stack.push(currentNode.right);
+        }
+
+        currentNode = currentNode.left;
+      }
+
+      if (stack.length > 0) {
+        currentNode = stack.pop();
+      }
+    }
+
+    if (typeof callback === "function") {
+      resultArray.forEach(callback);
+    } else {
+      console.log(resultArray);
+    }
+  }
+
   prettyPrint();
 
-  return { insert, prettyPrint, remove, find, levelOrder, inOrder };
+  return { insert, prettyPrint, remove, find, levelOrder, inOrder, preOrder };
 }
 
 // Optional callback functions for levelOrder()
@@ -312,7 +340,8 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.inOrder();
+newArray.preOrder();
+// newArray.inOrder();
 // newArray.inOrder(printNodes);
 // newArray.levelOrder();
 // newArray.levelOrder(printNodes);
