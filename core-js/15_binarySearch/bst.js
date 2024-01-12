@@ -372,7 +372,7 @@ function tree(array) {
     while (currentNode !== null) {
       if (value === currentNode.data) {
         if (currentNode.right === null && currentNode.left === null) {
-          console.log(`Height is 0`);
+          console.log(`Height of node ${value} is 0`);
           return;
         } else {
           // Traverse only right nodes since right nodes >= left nodes
@@ -380,7 +380,7 @@ function tree(array) {
             edges += 1;
             currentNode = currentNode.right;
           }
-          console.log(`Height is ${edges}`);
+          console.log(`Height of node ${value} is ${edges}`);
           return;
         }
       } else {
@@ -472,8 +472,8 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.depth();
-// newArray.height(5);
+// newArray.depth();
+newArray.height(5);
 // newArray.postOrder();
 // newArray.preOrder();
 // newArray.inOrder();
