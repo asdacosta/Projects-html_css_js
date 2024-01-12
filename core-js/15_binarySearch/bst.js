@@ -267,9 +267,9 @@ function tree(array) {
     if (!callback) {
       console.log(resultArray);
     }
-    // console.log(queue);
   }
 
+  // Depth first order: left-root-right
   function inOrder(callback) {
     let currentNode = rootNode;
     const resultArray = [];
@@ -293,6 +293,7 @@ function tree(array) {
     }
   }
 
+  // Depth first order: root-left-right
   function preOrder(callback) {
     let currentNode = rootNode;
     const resultArray = [];
@@ -321,6 +322,7 @@ function tree(array) {
     }
   }
 
+  // Depth first order: left-right-root
   function postOrder(callback) {
     const resultArray = [];
     const stack1 = [];
@@ -357,7 +359,7 @@ function tree(array) {
 
   prettyPrint();
 
-  return { insert, prettyPrint, remove, find, levelOrder, inOrder, preOrder };
+  return { insert, prettyPrint, remove, find, levelOrder, inOrder, preOrder, postOrder };
 }
 
 // Optional callback functions for levelOrder()
@@ -374,7 +376,8 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.preOrder();
+// newArray.postOrder();
+// newArray.preOrder();
 // newArray.inOrder();
 // newArray.inOrder(printNodes);
 // newArray.levelOrder();
