@@ -321,6 +321,40 @@ function tree(array) {
     }
   }
 
+  function postOrder(callback) {
+    const resultArray = [];
+    const stack1 = [];
+    const stack2 = [];
+    let currentNode = rootNode;
+
+    if (currentNode !== null) {
+      stack1.push(currentNode);
+    }
+
+    while (stack1.length > 0) {
+      currentNode = stack1.pop();
+      stack2.push(currentNode.data);
+
+      if (currentNode.left !== null) {
+        stack1.push(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        stack1.push(currentNode.right);
+      }
+    }
+
+    while (stack2.length > 0) {
+      resultArray.push(stack2.pop());
+    }
+
+    if (typeof callback === "function") {
+      resultArray.forEach(callback);
+    } else {
+      console.log(resultArray);
+    }
+  }
+
   prettyPrint();
 
   return { insert, prettyPrint, remove, find, levelOrder, inOrder, preOrder };
