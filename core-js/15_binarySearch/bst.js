@@ -357,10 +357,16 @@ function tree(array) {
     }
   }
 
+  //TODO: Check other cases: empty and single data tree
   function height(nodeValue) {
     let currentNode = rootNode;
     if (currentNode === null) {
       return;
+    }
+
+    // Uxe root node if no value is specified
+    if (!nodeValue) {
+      nodeValue = currentNode.data;
     }
 
     let edges = 0;
@@ -381,9 +387,11 @@ function tree(array) {
       } else {
         if (currentNode.right !== null && nodeValue > currentNode.data) {
           currentNode = currentNode.right;
-        }
-        if (currentNode.left !== null && nodeValue < currentNode.data) {
+        } else if (currentNode.left !== null && nodeValue < currentNode.data) {
           currentNode = currentNode.left;
+        } else {
+          console.log("There exists no such node.");
+          return;
         }
       }
     }
@@ -418,7 +426,7 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.height(7);
+newArray.height(5);
 // newArray.postOrder();
 // newArray.preOrder();
 // newArray.inOrder();
@@ -426,7 +434,8 @@ newArray.height(7);
 // newArray.levelOrder();
 // newArray.levelOrder(printNodes);
 // newArray.levelOrder(sumPrevNodes);
-// const emptyArray = tree([0]);
+// const emptyArray = tree([]);
+// emptyArray.height();
 // emptyArray.levelOrder();
 // emptyArray.insert(1);
 // emptyArray.find(0);
