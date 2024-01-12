@@ -324,10 +324,10 @@ function tree(array) {
 
   // Depth first order: left-right-root
   function postOrder(callback) {
+    let currentNode = rootNode;
     const resultArray = [];
     const stack1 = [];
     const stack2 = [];
-    let currentNode = rootNode;
 
     if (currentNode !== null) {
       stack1.push(currentNode);
@@ -357,12 +357,54 @@ function tree(array) {
     }
   }
 
+  function height(nodeValue) {
+    let currentNode = rootNode;
+    if (currentNode === null) {
+      return;
+    }
+
+    let edges = 0;
+    while (currentNode !== null) {
+      if (nodeValue === currentNode.data) {
+        if (currentNode.right === null && currentNode.left === null) {
+          console.log(`Height is 0`);
+          return;
+        } else {
+          // Traverse only right nodes since right nodes >= left nodes
+          while (currentNode.right !== null) {
+            edges += 1;
+            currentNode = currentNode.right;
+          }
+          console.log(`Height is ${edges}`);
+          return;
+        }
+      } else {
+        if (currentNode.right !== null && nodeValue > currentNode.data) {
+          currentNode = currentNode.right;
+        }
+        if (currentNode.left !== null && nodeValue < currentNode.data) {
+          currentNode = currentNode.left;
+        }
+      }
+    }
+  }
+
   prettyPrint();
 
-  return { insert, prettyPrint, remove, find, levelOrder, inOrder, preOrder, postOrder };
+  return {
+    insert,
+    prettyPrint,
+    remove,
+    find,
+    levelOrder,
+    inOrder,
+    preOrder,
+    postOrder,
+    height,
+  };
 }
 
-// Optional callback functions for levelOrder()
+// Optional callback functions for levelOrder(), inOrder(), preOrder(), postOrder().
 function printNodes(node) {
   console.log(node);
 }
@@ -376,6 +418,7 @@ function sumPrevNodes(node) {
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
 const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+newArray.height(7);
 // newArray.postOrder();
 // newArray.preOrder();
 // newArray.inOrder();
