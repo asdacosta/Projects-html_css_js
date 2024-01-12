@@ -530,7 +530,7 @@ function tree(array) {
       // Take current array to create new tree
       let valuesArray = inOrder();
       console.log("There is your balanced tree:");
-      let currentNode = tree(valuesArray);
+      tree(valuesArray);
       return;
     } else {
       console.log("Already balanced");
