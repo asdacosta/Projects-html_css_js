@@ -20,3 +20,28 @@ const getRandomArray = function (num) {
   console.log(randomArray);
   return randomArray;
 };
+
+const scriptTree = tree(getRandomArray());
+// Confirm tree is balanced
+scriptTree.isBalanced();
+// Print out elements in all different forms
+scriptTree.levelOrder();
+scriptTree.preOrder();
+scriptTree.postOrder();
+scriptTree.inOrder();
+// Unbalance tree by multiple insertions
+for (let m = 0; m < 10; m++) {
+  const randomNum = Math.floor(Math.random() * (100 + 1));
+  scriptTree.insert(randomNum);
+}
+// Confirm tree is unbalanced
+scriptTree.isBalanced();
+// Balance tree
+const balanced = scriptTree.rebalance();
+// Confirm tree is balanced
+balanced.isBalanced();
+// Print out elements in all different forms
+balanced.levelOrder();
+balanced.preOrder();
+balanced.postOrder();
+balanced.inOrder();
