@@ -289,8 +289,8 @@ function tree(array) {
     if (typeof callback === "function") {
       resultArray.forEach(callback);
     } else {
-      return resultArray;
       console.log(resultArray);
+      return resultArray;
     }
   }
 
@@ -478,6 +478,7 @@ function tree(array) {
         updateNodeAndQueue();
       } else if (currentNode.left !== null && currentNode.right === null) {
         if (currentNode.left.left !== null) {
+          console.log("1");
           console.log("Tree is not balanced");
           return false;
         }
@@ -530,8 +531,8 @@ function tree(array) {
       // Take current array to create new tree
       let valuesArray = inOrder();
       console.log("There is your balanced tree:");
-      tree(valuesArray);
-      return;
+      currentNode = tree(valuesArray);
+      return currentNode;
     } else {
       console.log("Already balanced");
       return;
@@ -569,10 +570,10 @@ function sumPrevNodes(node) {
 
 // const shortArray = tree([3, 1, 3, 2, 4, 5, 5, 6, 7, 10, 8, 3, 9]);
 // shortArray.levelOrder();
-const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-newArray.insert(10);
-newArray.insert(11);
-newArray.rebalance();
+// const newArray = tree([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+// newArray.insert(10);
+// newArray.insert(11);
+// newArray.rebalance();
 
 // newArray.isBalanced();
 // newArray.insert(10);
@@ -596,3 +597,5 @@ newArray.rebalance();
 // newArray.remove(9);
 // newArray.find(9);
 // newArray.insert(6);
+
+export { tree };
