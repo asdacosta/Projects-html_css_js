@@ -1,17 +1,28 @@
 class HashMap {
-  constructor() {}
+  constructor() {
+    this.bucket = [];
+  }
 
   hash(value) {
-    function stringToNumber(string) {
+    if (typeof value !== "string") {
+      return "Value must be a string.";
+    }
+
+    function stringToNumber(str) {
       let hashCode = 0;
       const primeNum = 31;
 
-      for (let m = 0; m < string.length; m++) {
-        hashCode = primeNum * hashCode + string.charCodeAt(m);
+      for (let m = 0; m < str.length; m++) {
+        hashCode = primeNum * hashCode + str.charCodeAt(m);
       }
-      return hashCode;
+      return hashCode % 16;
     }
 
-    return stringToNumber(value);
+    const code = stringToNumber(value);
+    console.log(code);
+    return code;
   }
 }
+
+const firstMap = new HashMap();
+firstMap.hash("Ever");
