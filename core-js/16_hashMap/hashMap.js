@@ -1,6 +1,13 @@
+class Node {
+  constructor(key, value) {
+    this.data = [key, value];
+    this.next = null;
+  }
+}
+
 class HashMap {
   constructor() {
-    this.bucket = [];
+    this.buckets = new Array(16).fill(null);
   }
 
   hash(value) {
@@ -22,7 +29,21 @@ class HashMap {
     console.log(code);
     return code;
   }
+
+  set(key, value) {
+    let currentNode = new Node(key, value);
+    const bucket = this.hash(key);
+    if (this.buckets[bucket] === null) {
+      this.buckets[bucket] = currentNode;
+      console.log(this.buckets);
+    } else {
+      this.buckets[bucket].next = currentNode;
+      console.log(this.buckets);
+    }
+  }
 }
 
 const firstMap = new HashMap();
-firstMap.hash("Ever");
+// firstMap.hash("Ever");
+firstMap.set("DaCosta", "Silvanus");
+firstMap.set("DaCosta", "Green");
