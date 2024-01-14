@@ -78,7 +78,7 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`13_recursive/fib.js`| Returns a fibonacci sequence up to the defined argument using recursion logic. Built from `TheOdinProject` and focuses on `Recursion` in JavaScript.|
 
 ### Complex Scripts
-1. `14_linkedList/list.js`: Executable file that logs and returns methods in a linked list class. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
+`14_linkedList/list.js`: Executable file that logs and returns methods in a linked list class. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
 
 <details>
 <summary>Methods</summary>
@@ -99,9 +99,9 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 
 </details>            
 
-2. `15_binarySearch/bst.js` Builds a tree with `tree(array)` with various methods. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
+`15_binarySearch/bst.js` Builds a tree with `tree(array)` with various methods. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
 
-    1. `15_binarySearch/script.js`: Creates a BST from an array of random numbers less than 50, then uses the methods.
+`15_binarySearch/script.js`: Creates a BST from an array of random numbers less than 50, then uses the methods.
 
 <details>
 <summary>Methods</summary>
