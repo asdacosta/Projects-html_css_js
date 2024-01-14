@@ -31,8 +31,19 @@ class HashMap {
   }
 
   set(key, value) {
-    let currentNode = new Node(key, value);
     const bucket = this.hash(key);
+    let bucketNode = this.buckets[bucket];
+    // Traverse to see if key exists
+    while (bucketNode !== null) {
+      if (key === bucketNode.data[0]) {
+        bucketNode.data[1] = value;
+        console.log(this.buckets);
+        return;
+      }
+      bucketNode = bucketNode.next;
+    }
+
+    let currentNode = new Node(key, value);
     if (this.buckets[bucket] === null) {
       this.buckets[bucket] = currentNode;
       console.log(this.buckets);
