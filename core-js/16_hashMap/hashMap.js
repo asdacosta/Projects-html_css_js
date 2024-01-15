@@ -92,6 +92,22 @@ class HashMap {
     console.log(`The key "${key}" not found.`);
     return null;
   }
+
+  has(key) {
+    const bucket = this.hash(key);
+    let bucketNode = this.buckets[bucket];
+
+    while (bucketNode !== null) {
+      if (key === bucketNode.data[0]) {
+        console.log(`The key ${key} exists.`);
+        return true;
+      }
+      bucketNode = bucketNode.next;
+    }
+
+    console.log(`The key "${key}" doesn't exist.`);
+    return false;
+  }
 }
 
 const firstMap = new HashMap();
@@ -119,6 +135,9 @@ const firstMap = new HashMap();
 // firstMap.set("lime", "15");
 // firstMap.set("avocado", "16");
 
+// Checks for validity of get(), has()
 firstMap.set("Ever", "Green");
 firstMap.get("Ever");
 firstMap.get("Evergreen");
+firstMap.has("Ever");
+firstMap.has("Evergreen");
