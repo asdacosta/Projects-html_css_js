@@ -33,7 +33,7 @@ class HashMap {
   set(key, value) {
     const bucket = this.hash(key);
     let bucketNode = this.buckets[bucket];
-    // Traverse to see if key exists
+    // Traverse to see if key exists, then update value
     while (bucketNode !== null) {
       if (key === bucketNode.data[0]) {
         bucketNode.data[1] = value;
@@ -44,6 +44,7 @@ class HashMap {
     }
 
     let currentNode = new Node(key, value);
+    // Populate bucket
     if (this.buckets[bucket] === null) {
       this.buckets[bucket] = currentNode;
       console.log(this.buckets);
@@ -51,10 +52,44 @@ class HashMap {
       this.buckets[bucket].next = currentNode;
       console.log(this.buckets);
     }
+
+    let bucketsPopulated = 0;
+    // Get number of populated buckets
+    this.buckets.forEach((index) => {
+      if (index !== null) {
+        bucketsPopulated += 1;
+      }
+    });
+    // Update capacity
+    const capacity = this.buckets.length;
+    let loadFactor = bucketsPopulated / capacity;
+    console.log(`Populated: ${bucketsPopulated}, Load Factor: ${loadFactor}`);
+    if (loadFactor >= 0.75) {
+      let extraSize = this.buckets.length * 2 - this.buckets.length;
+      for (let m = 0; m <= extraSize; m++) {
+        this.buckets.push(null);
+      }
+    }
   }
 }
 
 const firstMap = new HashMap();
 // firstMap.hash("Ever");
-firstMap.set("DaCosta", "Silvanus");
-firstMap.set("DaCosta", "Green");
+// firstMap.set("DaCosta", "Silvanus");
+// firstMap.set("DaCosta", "Green");
+firstMap.set("apple", "1");
+firstMap.set("banana", "2");
+firstMap.set("orange", "3");
+firstMap.set("grape", "4");
+firstMap.set("kiwi", "5");
+firstMap.set("watermelon", "6");
+firstMap.set("pineapple", "7");
+firstMap.set("strawberry", "8");
+firstMap.set("blueberry", "9");
+firstMap.set("peach", "10");
+firstMap.set("mango", "11");
+firstMap.set("pear", "12");
+firstMap.set("cherry", "13");
+firstMap.set("lemon", "14");
+firstMap.set("lime", "15");
+firstMap.set("avocado", "16");
