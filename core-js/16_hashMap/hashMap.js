@@ -15,18 +15,17 @@ class HashMap {
       return "Value must be a string.";
     }
 
-    function stringToNumber(str) {
+    const stringToNumber = (str) => {
       let hashCode = 0;
       const primeNum = 31;
 
       for (let m = 0; m < str.length; m++) {
         hashCode = primeNum * hashCode + str.charCodeAt(m);
       }
-      return hashCode % 16;
-    }
+      return hashCode % this.buckets.length;
+    };
 
     const code = stringToNumber(value);
-    console.log(code);
     return code;
   }
 
@@ -53,23 +52,26 @@ class HashMap {
       console.log(this.buckets);
     }
 
-    let bucketsPopulated = 0;
-    // Get number of populated buckets
-    this.buckets.forEach((index) => {
-      if (index !== null) {
-        bucketsPopulated += 1;
+    const updateCapacity = (() => {
+      let bucketsPopulated = 0;
+      const getPopulatedBucketsNumber = (() => {
+        this.buckets.forEach((index) => {
+          if (index !== null) {
+            bucketsPopulated += 1;
+          }
+        });
+      })();
+
+      const capacity = this.buckets.length;
+      let loadFactor = bucketsPopulated / capacity;
+      console.log(`Populated: ${bucketsPopulated}, Load Factor: ${loadFactor}`);
+      if (loadFactor >= 0.75) {
+        let extraSize = this.buckets.length * 2 - this.buckets.length;
+        for (let m = 0; m <= extraSize; m++) {
+          this.buckets.push(null);
+        }
       }
-    });
-    // Update capacity
-    const capacity = this.buckets.length;
-    let loadFactor = bucketsPopulated / capacity;
-    console.log(`Populated: ${bucketsPopulated}, Load Factor: ${loadFactor}`);
-    if (loadFactor >= 0.75) {
-      let extraSize = this.buckets.length * 2 - this.buckets.length;
-      for (let m = 0; m <= extraSize; m++) {
-        this.buckets.push(null);
-      }
-    }
+    })();
   }
 }
 
