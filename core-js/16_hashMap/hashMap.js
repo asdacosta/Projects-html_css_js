@@ -8,6 +8,7 @@ class Node {
 class HashMap {
   constructor() {
     this.buckets = new Array(16).fill(null);
+    this.head = null;
   }
 
   hash(value) {
@@ -45,12 +46,16 @@ class HashMap {
 
     const populateBucket = (() => {
       let currentNode = new Node(key, value);
-      // Populate bucket
       if (this.buckets[bucket] === null) {
-        this.buckets[bucket] = currentNode;
+        this.head = currentNode;
+        this.buckets[bucket] = this.head;
         console.log(this.buckets);
       } else {
-        this.buckets[bucket].next = currentNode;
+        let bucketNode = this.buckets[bucket];
+        while (bucketNode.next !== null) {
+          bucketNode = bucketNode.next;
+        }
+        bucketNode.next = currentNode;
         console.log(this.buckets);
       }
     })();
@@ -108,16 +113,56 @@ class HashMap {
     console.log(`The key "${key}" doesn't exist.`);
     return false;
   }
+
+  remove(key) {
+    console.log(this.head);
+
+    const bucket = this.hash(key);
+    let bucketNode = this.buckets[bucket];
+
+    if (bucketNode === null) {
+      console.log(`The key ${key} doesn't exist.`);
+      return;
+    } else {
+      if (bucketNode !== null && bucketNode.next === null) {
+        this.buckets[bucket] = null;
+        console.log(this.buckets);
+        return;
+      } else {
+        let firstNode = 0;
+        while (bucketNode !== null) {
+          firstNode += 1;
+          if (key === bucketNode.data[0] && firstNode === 1) {
+            this.buckets[bucket] = bucketNode.next;
+            console.log(this.buckets);
+            return;
+          } else if (key === bucketNode.next.data[0] && firstMap !== 1) {
+            if (bucketNode.next.next !== null) {
+              console.log("***");
+              bucketNode.next = bucketNode.next.next;
+              console.log(this.buckets);
+            } else {
+              bucketNode.next = null;
+              console.log(this.buckets);
+            }
+            return;
+            // this.buckets[bucket] = this.buckets[bucket];
+          }
+          bucketNode = bucketNode.next;
+        }
+      }
+    }
+  }
 }
 
 const firstMap = new HashMap();
 // firstMap.hash("Ever");
 
-// Checks if existing key's value can be updated
+// Checks if existing key's value can be updated:
 // firstMap.set("DaCosta", "Silvanus");
 // firstMap.set("DaCosta", "Green");
 
-// Checks if exceeded load Factor can increase buckets size
+// Checks if exceeded load Factor can increase buckets size:
 // firstMap.set("apple", "1");
 // firstMap.set("banana", "2");
 // firstMap.set("orange", "3");
@@ -135,9 +180,27 @@ const firstMap = new HashMap();
 // firstMap.set("lime", "15");
 // firstMap.set("avocado", "16");
 
-// Checks for validity of get(), has()
+// Checks for validity of get(), has():
+// firstMap.set("Ever", "Green");
+// firstMap.get("Ever");
+// firstMap.get("Evergreen");=
+// firstMap.has("Ever");
+// firstMap.has("Evergreen");
+
+// Checks for validity of remove():
+// Case 1: One node
 firstMap.set("Ever", "Green");
-firstMap.get("Ever");
-firstMap.get("Evergreen");
-firstMap.has("Ever");
-firstMap.has("Evergreen");
+firstMap.remove("Ever");
+// Case 2: Remove first node
+firstMap.set("Evre", "Green");
+firstMap.set("Eerv", "Blue");
+firstMap.remove("Evre");
+// Case 3: Remove last node
+firstMap.set("Evre", "Green");
+firstMap.set("Eerv", "Blue");
+firstMap.remove("Eerv");
+// Case 4: Remove middle node
+firstMap.set("Evre", "Green");
+firstMap.set("Eerv", "Blue");
+firstMap.set("reEv", "Grey");
+firstMap.remove("Eerv");
