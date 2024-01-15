@@ -31,26 +31,29 @@ class HashMap {
 
   set(key, value) {
     const bucket = this.hash(key);
-    let bucketNode = this.buckets[bucket];
-    // Traverse to see if key exists, then update value
-    while (bucketNode !== null) {
-      if (key === bucketNode.data[0]) {
-        bucketNode.data[1] = value;
-        console.log(this.buckets);
-        return;
+    const traverseBucketToUpdateExistingKeyValue = (() => {
+      let bucketNode = this.buckets[bucket];
+      while (bucketNode !== null) {
+        if (key === bucketNode.data[0]) {
+          bucketNode.data[1] = value;
+          console.log(this.buckets);
+          return;
+        }
+        bucketNode = bucketNode.next;
       }
-      bucketNode = bucketNode.next;
-    }
+    })();
 
-    let currentNode = new Node(key, value);
-    // Populate bucket
-    if (this.buckets[bucket] === null) {
-      this.buckets[bucket] = currentNode;
-      console.log(this.buckets);
-    } else {
-      this.buckets[bucket].next = currentNode;
-      console.log(this.buckets);
-    }
+    const populateBucket = (() => {
+      let currentNode = new Node(key, value);
+      // Populate bucket
+      if (this.buckets[bucket] === null) {
+        this.buckets[bucket] = currentNode;
+        console.log(this.buckets);
+      } else {
+        this.buckets[bucket].next = currentNode;
+        console.log(this.buckets);
+      }
+    })();
 
     const updateCapacity = (() => {
       let bucketsPopulated = 0;
