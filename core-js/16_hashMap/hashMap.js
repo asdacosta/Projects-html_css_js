@@ -76,25 +76,49 @@ class HashMap {
       }
     })();
   }
+
+  get(key) {
+    const bucket = this.hash(key);
+    let bucketNode = this.buckets[bucket];
+
+    while (bucketNode !== null) {
+      if (key === bucketNode.data[0]) {
+        console.log(`The value of ${key} is`, bucketNode.data[1]);
+        return;
+      }
+      bucketNode = bucketNode.next;
+    }
+
+    console.log(`The key "${key}" not found.`);
+    return null;
+  }
 }
 
 const firstMap = new HashMap();
 // firstMap.hash("Ever");
+
+// Checks if existing key's value can be updated
 // firstMap.set("DaCosta", "Silvanus");
 // firstMap.set("DaCosta", "Green");
-firstMap.set("apple", "1");
-firstMap.set("banana", "2");
-firstMap.set("orange", "3");
-firstMap.set("grape", "4");
-firstMap.set("kiwi", "5");
-firstMap.set("watermelon", "6");
-firstMap.set("pineapple", "7");
-firstMap.set("strawberry", "8");
-firstMap.set("blueberry", "9");
-firstMap.set("peach", "10");
-firstMap.set("mango", "11");
-firstMap.set("pear", "12");
-firstMap.set("cherry", "13");
-firstMap.set("lemon", "14");
-firstMap.set("lime", "15");
-firstMap.set("avocado", "16");
+
+// Checks if exceeded load Factor can increase buckets size
+// firstMap.set("apple", "1");
+// firstMap.set("banana", "2");
+// firstMap.set("orange", "3");
+// firstMap.set("grape", "4");
+// firstMap.set("kiwi", "5");
+// firstMap.set("watermelon", "6");
+// firstMap.set("pineapple", "7");
+// firstMap.set("strawberry", "8");
+// firstMap.set("blueberry", "9");
+// firstMap.set("peach", "10");
+// firstMap.set("mango", "11");
+// firstMap.set("pear", "12");
+// firstMap.set("cherry", "13");
+// firstMap.set("lemon", "14");
+// firstMap.set("lime", "15");
+// firstMap.set("avocado", "16");
+
+firstMap.set("Ever", "Green");
+firstMap.get("Ever");
+firstMap.get("Evergreen");
