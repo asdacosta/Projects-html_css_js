@@ -99,7 +99,7 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 
 </details>            
 
-`15_binarySearch/bst.js` Builds a tree with `tree(array)` with various methods. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
+`15_binarySearch/bst.js`: Builds a tree with `tree(array)` with various methods. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
 
 `15_binarySearch/script.js`: Creates a BST from an array of random numbers less than 50, then uses the methods.
 
@@ -118,6 +118,24 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 * `depth(value)`: Accepts a node-value and returns its depth. Returns depth of root if no `value` is specified.
 * `isBalanced()`: Checks if tree is balanced.
 * `rebalance()`: Re-balances a tree.
+
+</details>
+
+`16_hashMap/hashMap.js`: Builds a hash map with various methods. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.
+
+<details>
+<summary>Methods</summary>
+
+* `hash(value)`: Produces `value`'s hash code.
+* `set(key, value)`: Sets a `key`-`value` pair in a bucket the hash map.
+* `get(key)`: Gets the value of `key`.
+* `has(key)`: Returns true/false depending on whether `key` is in the hash map.
+* `remove(key)`: Removes entry with the `key`.
+* `length()`: Returns number of stored keys in the hash map.
+* `clear()`: Removes all entries in the hash map.
+* `keys()`: Returns an array of all keys inside the hash map.
+* `values()`: Returns an array of all values inside the hash map.
+* `entries()`: Returns an array of key-value pairs.
 
 </details>
 
