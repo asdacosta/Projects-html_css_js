@@ -122,22 +122,28 @@ class HashMap {
       console.log(`The key ${key} doesn't exist.`);
       return;
     } else {
+      // For single node
       if (bucketNode !== null && bucketNode.next === null) {
         this.buckets[bucket] = null;
         console.log(this.buckets);
         return;
+        // For multiple nodes
       } else {
         let firstNode = 0;
         while (bucketNode !== null) {
           firstNode += 1;
+          // First node in multiple nodes
           if (key === bucketNode.data[0] && firstNode === 1) {
             this.buckets[bucket] = bucketNode.next;
             console.log(this.buckets);
             return;
+            // For at least second node in multiple nodes
           } else if (key === bucketNode.next.data[0] && firstMap !== 1) {
+            // For middle nodes
             if (bucketNode.next.next !== null) {
               bucketNode.next = bucketNode.next.next;
               console.log(this.buckets);
+              // For single nodes
             } else {
               bucketNode.next = null;
               console.log(this.buckets);
