@@ -189,7 +189,7 @@ class HashMap {
       }
     });
 
-    console.log(keysBox);
+    console.log("Keys Box:", keysBox);
     return keysBox;
   }
 }
