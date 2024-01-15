@@ -192,6 +192,21 @@ class HashMap {
     console.log("Keys Box:", keysBox);
     return keysBox;
   }
+
+  values() {
+    let valuesBox = [];
+    this.buckets.forEach((bucket) => {
+      if (bucket !== null) {
+        while (bucket !== null) {
+          valuesBox.push(bucket.data[1]);
+          bucket = bucket.next;
+        }
+      }
+    });
+
+    console.log("Values Box:", valuesBox);
+    return valuesBox;
+  }
 }
 
 const firstMap = new HashMap();
@@ -201,7 +216,7 @@ const firstMap = new HashMap();
 // firstMap.set("DaCosta", "Silvanus");
 // firstMap.set("DaCosta", "Green");
 
-// Checks validity of length(), keys(), clear():
+// Checks validity of length(), keys(), values(), clear():
 firstMap.set("apple", "1");
 firstMap.set("banana", "2");
 firstMap.set("orange", "3");
@@ -210,7 +225,8 @@ firstMap.set("Evre", "Green");
 firstMap.set("Eerv", "Blue");
 firstMap.set("reEv", "Grey");
 // firstMap.length();
-firstMap.keys();
+// firstMap.keys();
+firstMap.values();
 // firstMap.clear();
 
 // Checks if exceeded load Factor can increase buckets size:
