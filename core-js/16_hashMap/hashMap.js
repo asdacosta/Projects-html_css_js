@@ -115,8 +115,6 @@ class HashMap {
   }
 
   remove(key) {
-    console.log(this.head);
-
     const bucket = this.hash(key);
     let bucketNode = this.buckets[bucket];
 
@@ -138,7 +136,6 @@ class HashMap {
             return;
           } else if (key === bucketNode.next.data[0] && firstMap !== 1) {
             if (bucketNode.next.next !== null) {
-              console.log("***");
               bucketNode.next = bucketNode.next.next;
               console.log(this.buckets);
             } else {
@@ -146,12 +143,26 @@ class HashMap {
               console.log(this.buckets);
             }
             return;
-            // this.buckets[bucket] = this.buckets[bucket];
           }
           bucketNode = bucketNode.next;
         }
       }
     }
+  }
+
+  length() {
+    let storedKeys = 0;
+    this.buckets.forEach((bucket) => {
+      if (bucket !== null) {
+        while (bucket !== null) {
+          storedKeys += 1;
+          bucket = bucket.next;
+        }
+      }
+    });
+
+    console.log("Number of stored keys:", storedKeys);
+    return storedKeys;
   }
 }
 
@@ -161,6 +172,16 @@ const firstMap = new HashMap();
 // Checks if existing key's value can be updated:
 // firstMap.set("DaCosta", "Silvanus");
 // firstMap.set("DaCosta", "Green");
+
+// Checks validity of length():
+// firstMap.set("apple", "1");
+// firstMap.set("banana", "2");
+// firstMap.set("orange", "3");
+// firstMap.set("grape", "4");
+// firstMap.set("Evre", "Green");
+// firstMap.set("Eerv", "Blue");
+// firstMap.set("reEv", "Grey");
+// firstMap.length();
 
 // Checks if exceeded load Factor can increase buckets size:
 // firstMap.set("apple", "1");
