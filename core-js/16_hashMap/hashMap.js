@@ -189,18 +189,26 @@ const firstMap = new HashMap();
 
 // Checks for validity of remove():
 // Case 1: One node
-firstMap.set("Ever", "Green");
-firstMap.remove("Ever");
+// firstMap.set("Ever", "Green");
+// firstMap.remove("Ever");
 // Case 2: Remove first node
-firstMap.set("Evre", "Green");
-firstMap.set("Eerv", "Blue");
-firstMap.remove("Evre");
+// firstMap.set("Evre", "Green");
+// firstMap.set("Eerv", "Blue");
+// firstMap.remove("Evre");
 // Case 3: Remove last node
-firstMap.set("Evre", "Green");
-firstMap.set("Eerv", "Blue");
-firstMap.remove("Eerv");
+// firstMap.set("Evre", "Green");
+// firstMap.set("Eerv", "Blue");
+// firstMap.remove("Eerv");
 // Case 4: Remove middle node
-firstMap.set("Evre", "Green");
-firstMap.set("Eerv", "Blue");
-firstMap.set("reEv", "Grey");
-firstMap.remove("Eerv");
+// firstMap.set("Evre", "Green");
+// firstMap.set("Eerv", "Blue");
+// firstMap.set("reEv", "Grey");
+// firstMap.remove("Eerv");
+// Case 5: To make sure it removes from specific this.head, and not random this.head in another bucket
+// firstMap.set("Evre", "Green");
+// firstMap.set("Eerv", "Blue");
+// firstMap.set("reEv", "Grey");
+// firstMap.set("Silva", "Yellow");
+// firstMap.set("ailvS", "Light");
+// firstMap.remove("Evre");
+// firstMap.remove("Silva");
