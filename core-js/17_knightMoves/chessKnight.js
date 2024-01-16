@@ -72,4 +72,7 @@ const knightMoves = function (initial, final) {
   })();
 };
 
+// knightMoves([3, 3], [0, 0]);
 // knightMoves([0, 0], [7, 7]);
+// knightMoves([0, 0], [1, 1]);
+// knightMoves([0, 0], [-1, -1]);
