@@ -7,4 +7,17 @@ const knightMoves = function (firstPoint, secPoint) {
     }
     return false;
   };
+
+  const getPossibleMoves = ([x, y]) => {
+    const possibleMoves = [];
+
+    moves.forEach((move) => {
+      const xMove = x + move[0];
+      const yMove = y + move[1];
+      if (validateMove(xMove, yMove)) {
+        possibleMoves.push([xMove, yMove]);
+      }
+    });
+    return possibleMoves;
+  };
 };
