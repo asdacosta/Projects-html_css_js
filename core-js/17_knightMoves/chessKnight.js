@@ -56,6 +56,20 @@ const knightMoves = function (initial, final) {
 
     return null;
   };
+
+  const displayPath = (function () {
+    const path = searchShortestPath(initial, final);
+    if (path) {
+      console.log(`You arrived in ${path.length - 1} moves. Your path:`);
+      path.forEach((square) => {
+        console.log(square);
+      });
+      return path;
+    } else {
+      console.log("There's no path!");
+      return null;
+    }
+  })();
 };
 
 // knightMoves([0, 0], [7, 7]);
