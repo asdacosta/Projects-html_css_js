@@ -11,4 +11,5 @@ test("Reverse string", () => {
 
 test("Calculations!", () => {
   expect(calculator.add(1, 1)).toBe(2);
+  expect(calculator.subtract(1, 1)).toBe(0);
 });
