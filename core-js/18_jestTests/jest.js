@@ -81,7 +81,15 @@ const analyzeArray = function (array) {
     return avg;
   };
 
-  return { average: findAverage() };
+  const findMin = function () {
+    const min = Math.min(...array);
+    return min;
+  };
+
+  return {
+    average: findAverage(),
+    min: findMin(),
+  };
 };
 
 module.exports = {
