@@ -1,4 +1,10 @@
-const { capitalize, reverseString, calculator, caesarCipher } = require("./jest");
+const {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} = require("./jest");
 
 test("Capitalize first letter in string", () => {
   expect(capitalize("ever costa")).toBe("Ever costa");
@@ -30,4 +36,14 @@ test("Encrypt wrapping from z to a string in Caesar Cipher", () => {
 
 test("Encrypt string containing punctuations in Caesar Cipher", () => {
   expect(caesarCipher("ever costa!", 3)).toBe("hyhu frvwd!");
+});
+
+test("All analyzing properties", () => {
+  const array = [1, 8, 3, 4, 2, 6];
+  const instance = analyzeArray(array);
+
+  expect(instance.average).toBe(4);
+  //   expect(instance.min).toBe(1);
+  //   expect(instance.max).toBe(8);
+  //   expect(instance.length).toBe(6);
 });
