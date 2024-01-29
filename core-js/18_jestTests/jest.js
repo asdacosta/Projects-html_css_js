@@ -86,9 +86,21 @@ const analyzeArray = function (array) {
     return min;
   };
 
+  const findMax = function () {
+    const max = Math.max(...array);
+    return max;
+  };
+
+  const findLength = function () {
+    const length = array.length;
+    return length;
+  };
+
   return {
     average: findAverage(),
     min: findMin(),
+    max: findMax(),
+    length: findLength(),
   };
 };
 
