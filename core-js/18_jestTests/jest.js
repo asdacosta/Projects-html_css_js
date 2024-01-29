@@ -21,8 +21,62 @@ const calculator = {
   },
 };
 
+const caesarCipher = function (string, shift) {
+  const checkStringAndShiftFactor = (function () {
+    if (typeof string !== "string" || typeof shift !== "number") {
+      return "Enter valid arguments";
+    }
+  })();
+
+  const encryptAlpInCaesarCipher = function (alp) {
+    const alphabets = [];
+    const getAlphabetsArray = (function () {
+      for (let i = 97; i <= 122; i++) {
+        alphabets.push(String.fromCharCode(i));
+      }
+    })();
+
+    let encryptionIndex = alphabets.indexOf(alp.toLowerCase());
+    const findCharIndex = (function () {
+      let shiftFactor = shift;
+      while (shiftFactor > 0) {
+        encryptionIndex += 1;
+        if (encryptionIndex === alphabets.length) {
+          encryptionIndex = 0;
+        }
+        shiftFactor -= 1;
+      }
+    })();
+
+    const encryptedAlp = alphabets[encryptionIndex];
+    const returnCaseSensitiveChar = (function () {
+      if (alp.match(/[A-Z]/)) {
+        encryptedAlp.toUpperCase();
+      }
+    })();
+    return encryptedAlp;
+  };
+
+  const encrypted = [];
+  const printEncripted = (function () {
+    const stringArr = string.split("");
+
+    stringArr.forEach((char) => {
+      if (char.match(/[a-zA-Z]/)) {
+        const encryptedAlp = encryptAlpInCaesarCipher(char);
+        encrypted.push(encryptedAlp);
+        return;
+      }
+      encrypted.push(encryptedAlp);
+    });
+  })();
+
+  return encrypted.join("");
+};
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
+  caesarCipher,
 };
