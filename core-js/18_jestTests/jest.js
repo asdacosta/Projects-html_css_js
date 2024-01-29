@@ -67,7 +67,7 @@ const caesarCipher = function (string, shift) {
         encrypted.push(encryptedAlp);
         return;
       }
-      encrypted.push(encryptedAlp);
+      encrypted.push(char);
     });
   })();
 
