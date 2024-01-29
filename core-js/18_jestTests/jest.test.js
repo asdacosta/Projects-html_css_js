@@ -16,11 +16,18 @@ test("Calculations!", () => {
   expect(calculator.multiply(1, 1)).toBe(1);
 });
 
-test.skip("Encrypt in Caesar Cipher", () => {
-  // Test for case
+test.skip("Encrypt normal string in Caesar Cipher", () => {
+  expect(caesarCipher("hver")).toBe("hyhu");
+});
+
+test.skip("Encrypt case sensitive string in Caesar Cipher", () => {
   expect(caesarCipher("Ever")).toBe("Hyhu");
-  // Test wrapping from z t0 a
+});
+
+test.skip("Encrypt wrapping from z to a string in Caesar Cipher", () => {
   expect(caesarCipher("xyz")).toBe("abc");
-  // Test punctuation
+});
+
+test.skip("Encrypt string containing punctuations in Caesar Cipher", () => {
   expect(caesarCipher("ever costa!")).toBe("hyhu frvwd!");
 });
