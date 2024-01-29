@@ -48,10 +48,10 @@ const caesarCipher = function (string, shift) {
       }
     })();
 
-    const encryptedAlp = alphabets[encryptionIndex];
+    let encryptedAlp = alphabets[encryptionIndex];
     const returnCaseSensitiveChar = (function () {
       if (alp.match(/[A-Z]/)) {
-        encryptedAlp.toUpperCase();
+        encryptedAlp = encryptedAlp.toUpperCase();
       }
     })();
     return encryptedAlp;
@@ -80,3 +80,5 @@ module.exports = {
   calculator,
   caesarCipher,
 };
+
+// caesarCipher("Ever", 3);
