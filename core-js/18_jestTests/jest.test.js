@@ -43,7 +43,7 @@ test("All analyzing properties", () => {
   const instance = analyzeArray(array);
 
   expect(instance.average).toBe(4);
-  //   expect(instance.min).toBe(1);
+  expect(instance.min).toBe(1);
   //   expect(instance.max).toBe(8);
   //   expect(instance.length).toBe(6);
 });
