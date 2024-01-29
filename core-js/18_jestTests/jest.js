@@ -74,11 +74,20 @@ const caesarCipher = function (string, shift) {
   return encrypted.join("");
 };
 
+const analyzeArray = function (array) {
+  const findAverage = function () {
+    const sum = array.reduce((acc, current) => acc + current);
+    const avg = sum / array.length;
+    return avg;
+  };
+
+  return { average: findAverage() };
+};
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 };
-
-// caesarCipher("Ever", 3);
