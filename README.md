@@ -76,7 +76,7 @@ This will make use of the dependencies `package.json` and `package-lock.json` to
 |`12_findTheOldest/findTheOldest.js`| Returns an object with the oldest person out of an array of objects. Built from `TheOdinProject` and focuses on `Fundamentals` in JavaScript. |
 |`13_recursive/mergesort.js`| Executable file that returns a sorted array using merge-sort logic. Built from `TheOdinProject` and focuses on `Recursion` in JavaScript.|
 |`13_recursive/fib.js`| Returns a fibonacci sequence up to the defined argument using recursion logic. Built from `TheOdinProject` and focuses on `Recursion` in JavaScript.|
-|`17_knightMoves`| Returns shortest path from initial square to final square in a chess board. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.|
+|`17_knightMoves/chessKnight.js`| Returns shortest path from initial square to final square in a chess board. Built from `TheOdinProject` and focuses on `Data Structures & Algorithms` in JavaScript.|
 |`18_jestTests/jest.js`| Contains functions to be tested with `18_jestTests/jest.test.js`. Built from `TheOdinProject` and focuses on `Testing` in JavaScript.|
 
 ### Complex Scripts
