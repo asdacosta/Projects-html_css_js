@@ -44,6 +44,6 @@ test("All analyzing properties", () => {
 
   expect(instance.average).toBe(4);
   expect(instance.min).toBe(1);
-  //   expect(instance.max).toBe(8);
-  //   expect(instance.length).toBe(6);
+  expect(instance.max).toBe(8);
+  expect(instance.length).toBe(6);
 });
